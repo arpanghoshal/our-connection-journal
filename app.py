@@ -16,7 +16,7 @@ app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['SECRET_KEY'] = SECRET_KEY
 app.config['SESSION_COOKIE_SAMESITE'] = 'Lax' # Good practice for session cookies
-app.config['SESSION_COOKIE_SECURE'] = False # Set to True if using HTTPS
+app.config['SESSION_COOKIE_SECURE'] = True # Set to True if using HTTPS
 app.config['SESSION_PERMANENT'] = True
 app.permanent_session_lifetime = timedelta(days=31) # Session lifetime
 
