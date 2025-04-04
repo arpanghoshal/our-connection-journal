@@ -1,0 +1,1454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Connection Journal - Nidhi & Arpan</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* --- All the CSS styles from your provided code go here --- */
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+        :root { /* Adjusted primary/secondary if desired, removed unused */
+            --primary: #6366f1; /* Indigo */ --primary-rgb: 99, 102, 241; --primary-light: #818cf8; --primary-dark: #4f46e5;
+            --secondary: #ec4899; /* Pink */ --secondary-rgb: 236, 72, 153; --secondary-light: #f472b6; --secondary-dark: #db2777;
+            --accent: #06b6d4; /* Cyan */ --accent-rgb: 6, 182, 212;
+            --light: #f7f8fc; --dark: #1e293b; --success: #10b981; --warning: #f59e0b; --love: #ef4444; --streak: #f97316; /* Orange for streak */
+            --surface: #ffffff; --text-primary: #1e293b; --text-secondary: #64748b; --border-light: rgba(0, 0, 0, 0.05);
+        }
+        *, *::before, *::after { box-sizing: border-box; transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); } html { scroll-behavior: smooth; }
+        body { font-family: 'Outfit', sans-serif; background-color: var(--light); background-image: radial-gradient(circle at 5% 5%, rgba(var(--primary-rgb), 0.03) 0%, transparent 50%), radial-gradient(circle at 95% 15%, rgba(var(--secondary-rgb), 0.03) 0%, transparent 50%), radial-gradient(circle at 50% 95%, rgba(var(--accent-rgb), 0.02) 0%, transparent 40%); min-height: 100vh; color: var(--text-primary); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        h1, h2, h3, h4, h5 { font-family: 'Playfair Display', serif; color: var(--text-primary); }
+        .app-container { max-width: 650px; margin: 0 auto; padding: 1rem 1.5rem 4rem; }
+        .card { background: var(--surface); border-radius: 18px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.04); overflow: hidden; border: 1px solid var(--border-light); transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); } .card:hover { box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06); transform: translateY(-4px); }
+        .btn { display: inline-flex; align-items: center; justify-content: center; padding: 0.8rem 1.75rem; border-radius: 14px; font-weight: 600; transition: all 0.3s ease; border: none; cursor: pointer; text-align: center; line-height: 1.25; letter-spacing: 0.02em; } .btn:focus { outline: none; } .btn:focus-visible { box-shadow: 0 0 0 3px rgba(var(--primary-rgb), 0.3); } .btn i { margin-right: 0.6em; font-size: 0.9em; } .btn-primary { background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%); color: white; box-shadow: 0 4px 15px rgba(var(--primary-rgb), 0.15); } .btn-primary:hover { transform: translateY(-2px) scale(1.02); box-shadow: 0 8px 25px rgba(var(--primary-rgb), 0.2); } .btn-primary:active { transform: translateY(0) scale(0.98); box-shadow: 0 4px 10px rgba(var(--primary-rgb), 0.15); } .btn-secondary { background: linear-gradient(135deg, var(--secondary-light) 0%, var(--secondary) 100%); color: white; box-shadow: 0 4px 15px rgba(var(--secondary-rgb), 0.15); } .btn-secondary:hover { transform: translateY(-2px) scale(1.02); box-shadow: 0 8px 25px rgba(var(--secondary-rgb), 0.2); } .btn-secondary:active { transform: translateY(0) scale(0.98); box-shadow: 0 4px 10px rgba(var(--secondary-rgb), 0.15); } .btn-accent { background: linear-gradient(135deg, #67e8f9 0%, var(--accent) 100%); color: var(--dark); box-shadow: 0 4px 15px rgba(var(--accent-rgb), 0.15); } .btn-accent:hover { transform: translateY(-2px) scale(1.02); box-shadow: 0 8px 25px rgba(var(--accent-rgb), 0.2); } .btn-accent:active { transform: translateY(0) scale(0.98); box-shadow: 0 4px 10px rgba(var(--accent-rgb), 0.15); } .btn-outline { border: 2px solid rgba(var(--primary-rgb), 0.4); color: var(--primary); background: transparent; } .btn-outline:hover { background: rgba(var(--primary-rgb), 0.06); border-color: var(--primary); transform: translateY(-2px); } .btn-outline:active { transform: translateY(0); background: rgba(var(--primary-rgb), 0.09); } .btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; box-shadow: none; }
+        .tag, .badge { display: inline-flex; align-items: center; padding: 0.4rem 0.9rem; border-radius: 50px; font-size: 0.75rem; font-weight: 600; line-height: 1; white-space: nowrap; } .tag .fa-solid, .tag .far, .tag .fas, .badge .fa-solid, .badge .far, .badge .fas { margin-right: 0.5em; } .tag-primary { background-color: rgba(var(--primary-rgb), 0.1); color: var(--primary); } .tag-secondary { background-color: rgba(var(--secondary-rgb), 0.1); color: var(--secondary); } .tag-accent { background-color: rgba(var(--accent-rgb), 0.1); color: var(--accent); } .tag-success { background-color: rgba(16, 185, 129, 0.1); color: var(--success); } .tag-warning { background-color: rgba(245, 158, 11, 0.1); color: var(--warning); } .tag-neutral { background-color: rgba(148, 163, 184, 0.1); color: #64748b; } .badge-nidhi { background: rgba(var(--secondary-rgb), 0.1); color: var(--secondary); } .badge-arpan { background: rgba(var(--primary-rgb), 0.1); color: var(--primary); } .badge-locked { background: rgba(245, 158, 11, 0.1); color: var(--warning); } .badge-unlocked { background: rgba(16, 185, 129, 0.1); color: var(--success); } .badge-neutral { background-color: rgba(148, 163, 184, 0.1); color: #64748b; } .badge .ml-1 { margin-left: 0.3em; }
+        .person-card { display: flex; flex-direction: column; align-items: center; padding: 1.5rem; border-radius: 16px; background: white; transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1); border: 2px solid transparent; cursor: pointer; box-shadow: 0 3px 10px rgba(0,0,0,0.03); } .person-card:hover { transform: translateY(-4px); box-shadow: 0 6px 15px rgba(0,0,0,0.05); } .person-card.active-nidhi { background: rgba(var(--secondary-rgb), 0.03); border-color: rgba(var(--secondary-rgb), 0.4); box-shadow: 0 8px 24px rgba(var(--secondary-rgb), 0.1); } .person-card.active-arpan { background: rgba(var(--primary-rgb), 0.03); border-color: rgba(var(--primary-rgb), 0.4); box-shadow: 0 8px 24px rgba(var(--primary-rgb), 0.1); } .person-avatar { width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; font-size: 1.8rem; transition: all 0.3s ease; position: relative; } .person-avatar::after { content: ''; position: absolute; width: 100%; height: 100%; border-radius: 50%; border: 3px solid transparent; top: 0; left: 0; transition: all 0.4s ease; transform: scale(0.9); opacity: 0; } .person-card.active-nidhi .person-avatar::after, .person-card.active-arpan .person-avatar::after { transform: scale(1.15); border-color: currentColor; opacity: 0.3; } .avatar-nidhi-bg { background: linear-gradient(135deg, rgba(var(--secondary-rgb), 0.1) 0%, rgba(244, 114, 182, 0.1) 100%); color: var(--secondary); } .avatar-arpan-bg { background: linear-gradient(135deg, rgba(var(--primary-rgb), 0.1) 0%, rgba(79, 70, 229, 0.1) 100%); color: var(--primary); }
+        .tab-container { background: rgba(0,0,0,0.03); border-radius: 12px; padding: 4px; display: inline-flex; margin-bottom: 1rem; } .tab { padding: 0.6rem 1.25rem; font-weight: 500; color: var(--text-secondary); border-radius: 10px; transition: all 0.3s ease; position: relative; background: transparent; border: none; cursor: pointer; } .tab[aria-selected="true"] { color: var(--primary-dark); background: var(--surface); box-shadow: 0 2px 5px rgba(0,0,0,0.05); } .tab:not([aria-selected="true"]):hover { color: var(--text-primary); background: rgba(255,255,255,0.5); } .tab i { margin-right: 0.5em; }
+        .audio-visualizer { height: 40px; display: flex; align-items: flex-end; justify-content: center; gap: 4px; } .audio-bar { width: 4px; height: 5px; border-radius: 3px; background: linear-gradient(180deg, var(--primary) 0%, var(--secondary) 100%); animation: audioWave 1.2s infinite ease-in-out alternate; } @keyframes audioWave { 0% { height: 4px; opacity: 0.7; } 100% { height: 35px; opacity: 1;} } .audio-bar:nth-child(1) { animation-delay: 0.0s; } .audio-bar:nth-child(2) { animation-delay: 0.1s; } .audio-bar:nth-child(3) { animation-delay: 0.2s; } .audio-bar:nth-child(4) { animation-delay: 0.3s; } .audio-bar:nth-child(5) { animation-delay: 0.4s; } .audio-bar:nth-child(6) { animation-delay: 0.5s; } .audio-bar:nth-child(7) { animation-delay: 0.4s; } .audio-bar:nth-child(8) { animation-delay: 0.3s; } .audio-bar:nth-child(9) { animation-delay: 0.2s; } .audio-bar:nth-child(10) { animation-delay: 0.1s; }
+        .record-btn-wrapper { display: flex; justify-content: center; margin-bottom: 1rem; } .record-btn { width: 72px; height: 72px; border-radius: 50%; background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); display: flex; align-items: center; justify-content: center; position: relative; box-shadow: 0 8px 20px rgba(var(--primary-rgb), 0.2), 0 8px 20px rgba(var(--secondary-rgb), 0.1); cursor: pointer; transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); border: none; } .record-btn:hover { transform: scale(1.08); box-shadow: 0 12px 30px rgba(var(--primary-rgb), 0.25), 0 12px 30px rgba(var(--secondary-rgb), 0.15); } .record-btn:active { transform: scale(0.95); } .record-btn .fa-microphone { font-size: 1.75rem; color: white; } .record-btn.is-recording::before { content: ''; position: absolute; width: 100%; height: 100%; border-radius: 50%; background: inherit; opacity: 0.4; z-index: -1; animation: pulse 1.5s infinite; } @keyframes pulse { 0% { transform: scale(1); opacity: 0.4; } 70% { transform: scale(1.4); opacity: 0; } 100% { transform: scale(1); opacity: 0; } }
+        .toast { position: fixed; top: -100px; left: 50%; transform: translateX(-50%); background: var(--dark); color: white; padding: 0.85rem 1.5rem; border-radius: 12px; font-weight: 500; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); display: flex; align-items: center; z-index: 1000; opacity: 0; transition: top 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity 0.5s ease; max-width: 90%; } .toast.show { top: 25px; opacity: 1; } .toast .icon { margin-right: 0.85rem; font-size: 1.35rem; line-height: 1; } .toast .content { line-height: 1.3; } .toast.toast-success .icon { color: var(--success); } .toast.toast-warning .icon { color: var(--warning); } .toast.toast-error .icon { color: var(--love); } .toast.toast-love { background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); } .toast.toast-love .icon { color: white; animation: heartbeat 1.5s infinite; }
+        .toast.toast-streak { background: linear-gradient(135deg, var(--streak) 0%, var(--warning) 100%); } .toast.toast-streak .icon { color: white; }
+        .audio-player { width: 100%; border-radius: 12px; background: rgba(0,0,0,0.03); } .audio-player::-webkit-media-controls-panel { background: transparent; } .audio-player::-webkit-media-controls-play-button { background-color: var(--primary); border-radius: 50%; filter: brightness(1.1); } .audio-player::-webkit-media-controls-current-time-display, .audio-player::-webkit-media-controls-time-remaining-display { color: var(--primary-dark); font-weight: 500; }
+        .question-item { border-radius: 12px; background: white; padding: 1rem 1.25rem; margin-bottom: 0.75rem; transition: all 0.3s ease; border-left: 4px solid transparent; box-shadow: 0 2px 5px rgba(0,0,0,0.03); cursor: pointer; } .question-item:hover { border-left-color: var(--primary); transform: translateX(5px); box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); } .question-item.selected { border-left-color: var(--accent); background-color: rgba(var(--accent-rgb), 0.05); }
+        .heartbeat { display: inline-block; animation: heartbeat 1.4s infinite ease-in-out; } @keyframes heartbeat { 0%, 100% { transform: scale(1); } 10% { transform: scale(0.9); } 30% { transform: scale(1.2); } 50% { transform: scale(1); } }
+        .lock-animation { animation: lockShake 0.8s ease-in-out; } @keyframes lockShake { 0%, 100% { transform: rotate(0deg); } 10%, 30%, 50%, 70%, 90% { transform: rotate(-8deg); } 20%, 40%, 60%, 80% { transform: rotate(8deg); } }
+        .fade-enter-active, .fade-leave-active { transition: opacity 0.4s ease, transform 0.4s ease; } .fade-enter-from, .fade-leave-to { opacity: 0; transform: translateY(15px); } .fade-enter-to, .fade-leave-from { opacity: 1; transform: translateY(0); }
+        .list-item { animation: fadeInUp 0.5s forwards; opacity: 0; transform: translateY(10px); } @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } } .stagger-list > .list-item:nth-child(1) { animation-delay: 0.05s; } .stagger-list > .list-item:nth-child(2) { animation-delay: 0.1s; } .stagger-list > .list-item:nth-child(3) { animation-delay: 0.15s; } .stagger-list > .list-item:nth-child(4) { animation-delay: 0.2s; } .stagger-list > .list-item:nth-child(5) { animation-delay: 0.25s; }
+        .locked-overlay { backdrop-filter: blur(5px); background: rgba(255, 255, 255, 0.6); border-radius: 12px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 1rem; position: absolute; inset: 0; z-index: 10; } .locked-overlay i { font-size: 1.8rem; margin-bottom: 0.5rem; } .locked-overlay p { font-size: 0.9rem; color: var(--text-secondary); }
+        .input-wrapper { position: relative; } .custom-input { width: 100%; padding: 1rem 3.5rem 1rem 1.5rem; border-radius: 12px; border: 2px solid rgba(var(--primary-rgb), 0.3); font-size: 1rem; transition: all 0.3s ease; background: white; } .custom-input:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 4px rgba(var(--primary-rgb), 0.15); } .custom-input::placeholder { color: var(--text-secondary); opacity: 0.8; } .input-icon { position: absolute; right: 0.75rem; top: 50%; transform: translateY(-50%); color: var(--primary); background: rgba(var(--primary-rgb), 0.1); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.3s ease; border: none; } .input-icon:hover { background: var(--primary); color: white; transform: translateY(-50%) scale(1.1); } .input-icon:active { transform: translateY(-50%) scale(1.0); }
+        .section-title { position: relative; margin-bottom: 1.5rem; padding-bottom: 0.5rem; display: inline-block; font-size: 1.6rem; font-weight: 600; } .section-title::after { content: ''; position: absolute; bottom: 0; left: 0; width: 50%; height: 3px; border-radius: 3px; background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%); }
+        .main-question { position: relative; padding: 2.5rem 2rem 2rem; border-radius: 16px; background: white; box-shadow: 0 6px 25px rgba(0, 0, 0, 0.06); } .main-question::before { content: "\201C"; position: absolute; top: 0.5rem; left: 1rem; font-family: 'Playfair Display', serif; font-size: 6rem; line-height: 1; color: rgba(var(--primary-rgb), 0.08); z-index: 0; } .main-question-text { font-size: 1.3rem; line-height: 1.7; color: var(--text-primary); font-weight: 500; margin-bottom: 2.5rem; position: relative; z-index: 1; }
+        .answer-box { border-radius: 16px; overflow: hidden; transition: all 0.3s ease; margin-bottom: 1.5rem; border: 1px solid var(--border-light); } .answer-box-nidhi { border-left: 5px solid var(--secondary); } .answer-box-arpan { border-left: 5px solid var(--primary); } .answer-header { padding: 0.8rem 1.25rem; display: flex; justify-content: space-between; align-items: center; } .answer-header-nidhi { background: linear-gradient(90deg, rgba(var(--secondary-rgb), 0.08) 0%, rgba(var(--secondary-rgb), 0.01) 100%); } .answer-header-arpan { background: linear-gradient(90deg, rgba(var(--primary-rgb), 0.08) 0%, rgba(var(--primary-rgb), 0.01) 100%); } .answer-header h3 { font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 1rem; } .avatar { width: 2.25rem; height: 2.25rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1rem; color: white; margin-right: 0.75rem; font-weight: 600; } .avatar-nidhi { background: linear-gradient(135deg, #f9a8d4 0%, #ec4899 100%); } .avatar-arpan { background: linear-gradient(135deg, #a5b4fc 0%, #6366f1 100%); } .answer-content { padding: 1.5rem; } .answer-content p.date { font-size: 0.75rem; color: var(--text-secondary); margin-top: 0.75rem; text-align: right; }
+        .spinner { width: 24px; height: 24px; border: 3px solid rgba(var(--primary-rgb), 0.2); border-radius: 50%; border-top-color: var(--primary); animation: spin 0.8s linear infinite; margin-right: 0.75rem; } @keyframes spin { to { transform: rotate(360deg); } }
+        ::-webkit-scrollbar { width: 8px; height: 8px; } ::-webkit-scrollbar-track { background: rgba(0,0,0,0.05); border-radius: 10px; } ::-webkit-scrollbar-thumb { background: rgba(var(--primary-rgb), 0.3); border-radius: 10px; border: 2px solid transparent; background-clip: content-box; } ::-webkit-scrollbar-thumb:hover { background: rgba(var(--primary-rgb), 0.5); }
+        .hidden { display: none; } [aria-hidden="true"] { display: none !important; /* Use important to ensure JS hide works */ }
+        .status-bar { display: flex; justify-content: space-between; align-items: center; background: rgba(var(--primary-rgb), 0.03); padding: 0.75rem 1.25rem; border-radius: 14px; margin-bottom: 2rem; border: 1px solid rgba(var(--primary-rgb), 0.1); }
+        .status-item { display: flex; align-items: center; font-weight: 500; color: var(--text-secondary); } .status-item i { margin-right: 0.6em; font-size: 1.1em; } .status-item .count { font-weight: 700; color: var(--text-primary); margin-left: 0.3em; font-size: 1.05em;}
+        #love-points-icon { color: var(--love); animation: heartbeat 1.5s infinite ease-in-out; } #streak-icon { color: var(--streak); }
+        #point-progress-indicator { font-size: 0.85rem; text-align: center; color: var(--accent); font-weight: 500; margin-bottom: 1.5rem; padding: 0.5rem; background-color: rgba(var(--accent-rgb), 0.08); border-radius: 8px; border: 1px dashed rgba(var(--accent-rgb), 0.3); } #point-progress-indicator i { margin-right: 0.4em; }
+
+        /* Dashboard Styles */
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .dashboard-actions {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+        .dashboard-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+        @media (min-width: 768px) {
+            .dashboard-content {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 2rem;
+            }
+        }
+        .pending-questions, .recent-activity {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            border: 1px solid var(--border-light);
+            height: 100%;
+        }
+        .questions-list, .activity-list {
+            margin-top: 1rem;
+            max-height: 300px;
+            overflow-y: auto;
+            padding-right: 0.5rem;
+        }
+        .question-card {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+            border: 1px solid #eee;
+        }
+        .question-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        .question-card h4 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+        .question-card p {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+        }
+        .question-card .btn {
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
+            min-height: 2.5rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .activity-item {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #eee;
+            font-size: 0.9rem;
+        }
+        .activity-item:last-child {
+            border-bottom: none;
+        }
+        .activity-item p {
+            margin-bottom: 0.25rem;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .activity-item small {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            display: block;
+            margin-top: 0.25rem;
+        }
+
+        /* Update existing styles */
+        .section {
+             /* max-width: 1200px; Removed, using app-container width */
+             margin: 0 auto;
+             padding: 0; /* Remove padding, handled by app-container */
+             margin-bottom: 2rem; /* Add consistent bottom margin */
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <div class="app-container">
+        <header class="text-center mb-6 mt-6">
+            <div class="status-bar card">
+                <div class="status-item">
+                    <i id="streak-icon" class="fas fa-fire"></i>
+                    <span>Streak:</span>
+                    <span id="streak-count" class="count">0</span>
+                </div>
+                <div class="status-item">
+                     <i id="love-points-icon" class="fas fa-heart"></i>
+                     <span>Points:</span>
+                    <span id="love-points-count" class="count">0</span>
+                </div>
+            </div>
+
+            <div class="inline-block mb-3 tag tag-accent"> <i class="fas fa-comment-dots"></i> Growing Closer Together </div>
+            <h1 class="text-4xl font-bold mb-3">Our Connection Journal</h1>
+            <div class="flex items-center justify-center text-xl space-x-3 mb-2">
+                <span class="text-pink-500 font-semibold">Nidhi</span>
+                <i class="fas fa-heart heartbeat text-lg" style="color: var(--love);"></i>
+                <span class="text-indigo-600 font-semibold">Arpan</span>
+            </div>
+            <p class="text-gray-500 text-base max-w-md mx-auto">Record audio answers, share your thoughts, and connect.</p>
+        </header>
+
+        <main id="app-main">
+
+             <section id="step-home" class="section" data-step="1">
+                 <h2 class="text-xl font-semibold mb-4 section-title">Who's Sharing Now?</h2>
+                 <div class="grid grid-cols-2 gap-4">
+                     <div id="user-nidhi" class="person-card flex-1 shadow-sm" role="button" tabindex="0" aria-label="Select Nidhi"><div class="person-avatar avatar-nidhi-bg"><i class="fas fa-female"></i></div><span class="font-medium text-pink-500 text-lg">Nidhi</span></div>
+                     <div id="user-arpan" class="person-card flex-1 shadow-sm" role="button" tabindex="0" aria-label="Select Arpan"><div class="person-avatar avatar-arpan-bg"><i class="fas fa-male"></i></div><span class="font-medium text-indigo-600 text-lg">Arpan</span></div>
+                 </div>
+                 <p class="text-center text-sm text-gray-500 mt-6 bg-indigo-50 p-3 rounded-lg border border-indigo-100">
+                     <i class="fas fa-info-circle text-indigo-400 mr-1"></i> Select your name to start sharing or view your dashboard.
+                 </p>
+             </section>
+
+             <section id="dashboard" class="section hidden" data-step="dashboard" aria-hidden="true">
+                <div class="dashboard-header">
+                    <h2 class="text-xl font-semibold section-title !mb-0">Dashboard</h2>
+                    <div class="dashboard-actions">
+                        <button id="askNewQuestionBtn" class="btn btn-primary">
+                            <i class="fas fa-plus mr-2"></i> Ask New Question
+                        </button>
+                        <button id="viewHistoryBtnDashboard" class="btn btn-outline">
+                            <i class="fas fa-history mr-2"></i> View History
+                        </button>
+                        <button id="switchUserBtn" class="btn btn-outline !border-gray-300 !text-gray-500">
+                            <i class="fas fa-user-friends mr-2"></i> Switch User
+                        </button>
+                    </div>
+                </div>
+
+                <div class="dashboard-content mt-6">
+                    <div class="pending-questions card">
+                        <h3 class="text-lg font-semibold mb-4 border-b pb-2">Questions Waiting for <span id="dashboard-user-name">Your</span> Answer</h3>
+                        <div id="pendingQuestionsList" class="questions-list">
+                            <p class="text-center text-gray-500 py-4">Loading pending questions...</p>
+                        </div>
+                    </div>
+
+                    <div class="recent-activity card">
+                        <h3 class="text-lg font-semibold mb-4 border-b pb-2">Recent Activity</h3>
+                        <div id="recentActivityList" class="activity-list">
+                            <p class="text-center text-gray-500 py-4">Loading recent activity...</p>
+                        </div>
+                    </div>
+                </div>
+                 <section class="mt-8 mb-6"> <!-- Add margin top -->
+                     <div class="flex justify-between items-center mb-4">
+                         <h2 class="text-xl font-semibold section-title !mb-0">Our Question History</h2>
+                         <button id="toggle-history" class="tag tag-primary cursor-pointer" aria-expanded="false" aria-controls="history-list-container">
+                             <i class="fas fa-chevron-down mr-1 transition-transform duration-300"></i>
+                             <span id="toggle-history-text">Show</span>
+                         </button>
+                     </div>
+                     <div id="history-list-container" class="hidden" aria-hidden="true">
+                         <div id="history-list" class="space-y-2 stagger-list">
+                             <p class="text-center text-gray-500 p-4">Loading history...</p>
+                         </div>
+                     </div>
+                 </section>
+            </section>
+
+            <section id="step-question-select" class="section hidden" data-step="2" aria-hidden="true">
+                <button id="back-to-dashboard" class="text-sm text-indigo-600 hover:underline mb-4 block"> <i class="fas fa-arrow-left mr-1"></i> Back to Dashboard </button>
+                <h2 class="text-xl font-semibold mb-4 section-title">Ask a Question</h2>
+                <div id="point-progress-indicator" class="hidden"></div>
+                <div class="flex justify-center">
+                    <div class="tab-container" role="tablist" aria-label="Question Selection Method"><button id="manual-tab" class="tab" role="tab" aria-selected="true" aria-controls="manual-panel"><i class="far fa-edit"></i>Your Mind</button><button id="random-tab" class="tab" role="tab" aria-selected="false" aria-controls="random-panel"><i class="fas fa-random"></i>Pick Random</button></div>
+                </div>
+                <div id="manual-panel" role="tabpanel" aria-labelledby="manual-tab"><div class="input-wrapper mb-4"><input type="text" id="custom-question" class="custom-input" placeholder="Type your question here..." aria-label="Custom question input"><button id="submit-question" class="input-icon" aria-label="Submit custom question"><i class="fas fa-arrow-right"></i></button></div><p class="text-xs text-center text-gray-500">Press Enter or click the arrow to submit.</p></div>
+                <div id="random-panel" class="hidden" role="tabpanel" aria-labelledby="random-tab" aria-hidden="true">
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Select a Topic:</label>
+                        <select id="question-topic" class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+                            <option value="all">All Topics</option>
+                            ${Object.keys(QUESTIONS_POOL).map(topic => `<option value="${topic}">${topic}</option>`).join('')}
+                        </select>
+                    </div>
+                    <div id="random-questions-list" class="space-y-2 pb-2 stagger-list" style="max-height: 350px; overflow-y: auto;">
+                        <p class="text-center text-gray-500 p-4">Select a topic to see questions</p>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <button id="more-questions" class="btn btn-outline">
+                            <i class="fas fa-sync-alt mr-2"></i> Get New Random Questions
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="step-record" class="section hidden" data-step="3" aria-hidden="true">
+                <button id="back-to-question-select" class="text-sm text-indigo-600 hover:underline mb-4 block"> <i class="fas fa-arrow-left mr-1"></i> Back to Question Select </button>
+                <h2 class="text-xl font-semibold mb-4 section-title">Record Your Answer</h2>
+                <div class="main-question mb-6">
+                    <p id="current-question" class="main-question-text"></p>
+                    <div id="recording-area">
+                        <div id="record-prompt"><div class="record-btn-wrapper"><button id="record-btn" class="record-btn" aria-label="Start recording"><i class="fas fa-microphone"></i></button></div><p class="text-center text-gray-500">Tap the mic to start recording your answer.</p></div>
+                        <div id="recording-status" class="hidden" aria-hidden="true"><div class="flex items-center justify-center mb-3 text-indigo-600 font-medium"><div class="spinner"></div> Recording... <span id="timer" class="ml-2 font-mono">0:00</span></div><div class="audio-visualizer mx-auto mb-6"> <div class="audio-bar"></div><div class="audio-bar"></div><div class="audio-bar"></div><div class="audio-bar"></div><div class="audio-bar"></div><div class="audio-bar"></div><div class="audio-bar"></div><div class="audio-bar"></div><div class="audio-bar"></div><div class="audio-bar"></div> </div><div class="text-center"><button id="stop-recording" class="btn btn-secondary"><i class="fas fa-stop mr-2"></i> Stop Recording</button></div></div>
+                        <div id="recording-saved" class="hidden" aria-hidden="true"><p class="text-center text-green-600 font-medium mb-4"><i class="fas fa-check-circle mr-2"></i>Recording ready!</p><div class="mb-6"><audio id="audio-preview" controls class="audio-player" aria-label="Audio answer preview"></audio></div><div class="flex flex-col sm:flex-row sm:justify-center gap-3"><button id="save-answer" class="btn btn-primary w-full sm:w-auto"><i class="fas fa-save mr-2"></i> Save & View Answers</button><button id="re-record" class="btn btn-outline w-full sm:w-auto"><i class="fas fa-redo-alt mr-2"></i> Record Again</button></div></div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="step-review" class="section hidden" data-step="4" aria-hidden="true">
+                <h2 class="text-xl font-semibold mb-4 section-title">Review Answers</h2>
+                <p id="review-question-text" class="text-lg text-gray-700 mb-6 font-medium italic"></p>
+                <div id="nidhi-answer-box" class="answer-box answer-box-nidhi"><div class="answer-header answer-header-nidhi"><div class="flex items-center"><div class="avatar avatar-nidhi">N</div><h3>Nidhi's Answer</h3></div><span id="nidhi-status" class="tag tag-neutral">Not Answered</span></div><div id="nidhi-answer-content" class="relative min-h-[80px]"><div class="answer-content hidden" aria-hidden="true"><audio controls class="audio-player" aria-label="Nidhi's audio answer"></audio><p class="date text-xs text-gray-500 mt-2">Answered on: <span></span></p></div><div id="nidhi-locked" class="locked-overlay"><div><i class="fas fa-lock text-pink-400 lock-animation"></i><p>Answer unlocks when Arpan also answers.</p></div></div><div id="nidhi-pending" class="locked-overlay hidden" aria-hidden="true"><div><i class="far fa-clock text-pink-400"></i><p>Nidhi hasn't answered this yet.</p></div></div></div></div>
+                <div id="arpan-answer-box" class="answer-box answer-box-arpan"><div class="answer-header answer-header-arpan"><div class="flex items-center"><div class="avatar avatar-arpan">A</div><h3>Arpan's Answer</h3></div><span id="arpan-status" class="tag tag-neutral">Not Answered</span></div><div id="arpan-answer-content" class="relative min-h-[80px]"><div class="answer-content hidden" aria-hidden="true"><audio controls class="audio-player" aria-label="Arpan's audio answer"></audio><p class="date text-xs text-gray-500 mt-2">Answered on: <span></span></p></div><div id="arpan-locked" class="locked-overlay"><div><i class="fas fa-lock text-indigo-400 lock-animation"></i><p>Answer unlocks when Nidhi also answers.</p></div></div><div id="arpan-pending" class="locked-overlay hidden" aria-hidden="true"><div><i class="far fa-clock text-indigo-400"></i><p>Arpan hasn't answered this yet.</p></div></div></div></div>
+                <div class="text-center mt-8 flex flex-col sm:flex-row justify-center gap-3">
+                    <button id="ask-another-question-from-review" class="btn btn-primary"><i class="fas fa-plus mr-2"></i> Ask Another Question</button>
+                    <button id="back-to-dashboard-from-review" class="btn btn-outline"><i class="fas fa-tachometer-alt mr-2"></i> Back to Dashboard</button>
+                </div>
+            </section>
+
+           </main>
+
+        <footer class="text-center py-8 mt-12 border-t border-gray-200">
+             <div class="flex flex-col items-center space-y-4">
+                 <div class="text-sm text-gray-500">
+                     <p>© <span id="current-year"></span> Our Connection Journal</p>
+                 </div>
+             </div>
+        </footer>
+    </div>
+
+    <div id="toast" class="toast" role="alert" aria-live="assertive"><div class="icon"><i class="fas fa-info-circle"></i></div><div class="content">Notification message</div></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- Constants & Configuration ---
+            const API_BASE_URL = '/api';
+            const LOVE_POINTS_PER_PAIR = 1;
+            const QUESTIONS_POOL = {
+                "Fun & Playful": [
+                    "What isn't an Olympic sport but absolutely should be, if you were in charge?",
+                    "Do you ever talk to pets in a baby voice, and would you admit it?",
+                    "If we started a band together, what would you want to name it and what genre would we play?",
+                    "Would you rather have the ability to fly or breathe underwater, and why?",
+                    "What's the most random fact you know that never fails to surprise people?",
+                    "Who was your imaginary friend (or favorite make-believe game) when you were little?",
+                    "What's your guiltiest pleasure that you only indulge in when you're alone?",
+                    "If you had a personal assistant for a day, what tasks would you have them do for you?",
+                    "Which Jeopardy! category would you totally crush everyone in?",
+                    "Is there a villain or fictional 'bad guy' you secretly actually like, and why?"
+                ],
+                "Travel & Lifestyle": [
+                    "If you could vacation anywhere in the world right now, where would you go and why?",
+                    "What's your favorite travel memory or the best trip you've ever taken?",
+                    "Do you prefer mountains, the beach, or cities for a getaway? What draws you to that choice?",
+                    "What's your idea of a perfect weekend when you have no obligations?",
+                    "Are you more of an early bird or a night owl, and how does that shape your day-to-day routine?",
+                    "What are some hobbies or activities you're really passionate about?",
+                    "Is there a hobby you had as a child that you'd love to pick up again?",
+                    "If you could learn a new skill or hobby instantly, what would it be?",
+                    "What's one thing you've always wanted to try but haven't gotten around to yet?",
+                    "What's your go-to comfort food or meal that always makes you happy?"
+                ],
+                "Romance & Love": [
+                    "What was your first impression of me when we met, and has it changed since then?",
+                    "What's your idea of a perfect date night for us?",
+                    "Do you believe in love at first sight, or do you think love grows over time?",
+                    "What kind of little romantic gestures mean the most to you?",
+                    "What gives you butterflies or little bursts of excitement in a relationship?",
+                    "Is there a romantic movie or book that you absolutely love?",
+                    "Do you have a favorite love song, or one that always puts you in a romantic mood?",
+                    "How important is it for you to keep the romance alive in a long-term relationship?",
+                    "What's the most romantic thing someone has ever done for you?",
+                    "Do you remember the moment when you knew you were falling in love with me?"
+                ],
+                "Childhood & Family": [
+                    "Where did you grow up, and what was your hometown like?",
+                    "How would you describe yourself as a kid?",
+                    "What's one of your favorite childhood memories that always makes you smile?",
+                    "Did you have any nicknames as a kid?",
+                    "Who was your childhood hero or someone you really looked up to?",
+                    "What were you like in high school, and how have you changed since then?",
+                    "Did your family have any special traditions that you loved?",
+                    "What's a story your family always tells about you?",
+                    "Were your parents more strict or lenient, and how did that affect you?",
+                    "How close are you with your family members now?"
+                ],
+                "Culture & Spirituality": [
+                    "How has your cultural background influenced the person you are today?",
+                    "Are there any family traditions or cultural customs that are important to you?",
+                    "What holidays or celebrations does your family observe?",
+                    "Were you raised with a particular religion or spiritual practice?",
+                    "Would you describe yourself as religious, spiritual, or more secular?",
+                    "Is there a certain value or trait that your culture especially emphasizes?",
+                    "What's something you wish people understood about your culture?",
+                    "How do you feel about blending cultural traditions if we were to have our own family?",
+                    "Are there any spiritual practices that you find meaningful?",
+                    "Have you ever faced challenges because of your cultural or religious identity?"
+                ],
+                "Life Goals & Dreams": [
+                    "Where do you see yourself in 5 or 10 years?",
+                    "What's one big dream or goal you have for your life?",
+                    "If money were no object, how would you spend your time?",
+                    "What did you want to be when you were a child?",
+                    "Are there any personal projects you'd love to pursue?",
+                    "What's a goal you're currently working toward?",
+                    "If you could accomplish one huge thing in the next year, what would it be?",
+                    "Do you have a bucket list? What are some things on it?",
+                    "How do you define success for yourself?",
+                    "What's a new place you dream of living or experiencing?"
+                ],
+                "Values & Beliefs": [
+                    "What do you consider your core values in life?",
+                    "How did your upbringing influence your values?",
+                    "What's a value or cause you're passionate about?",
+                    "How do you define happiness?",
+                    "What does success mean to you personally?",
+                    "How important is honesty in your life?",
+                    "What does the word 'integrity' mean to you?",
+                    "Are there any beliefs you've changed your mind about?",
+                    "How do you approach making difficult decisions?",
+                    "What role does forgiveness play in your life?"
+                ],
+                "Past Experiences": [
+                    "What's the hardest thing you've ever gone through?",
+                    "What's a mistake that taught you a valuable lesson?",
+                    "What's the most important lesson you've learned in life?",
+                    "Who has been a big influence in your life?",
+                    "Have you ever had your heart broken?",
+                    "What's an experience that changed your perspective on life?",
+                    "What achievement are you proudest of?",
+                    "What's one of your happiest moments?",
+                    "Is there anything in your past you would do differently?",
+                    "What's the most adventurous thing you've ever done?"
+                ],
+                "Love Languages": [
+                    "Do you know what your primary love language is?",
+                    "How do you usually express love to someone?",
+                    "What makes you feel really loved and appreciated?",
+                    "Is there something I do that makes you feel especially loved?",
+                    "When you're feeling down, what's the best way to support you?",
+                    "Do you find it easier to give or receive love?",
+                    "How do you feel about receiving gifts as a sign of love?",
+                    "What's a surefire way to put a smile on your face?",
+                    "Are you comfortable asking for emotional support?",
+                    "What makes you feel safe and secure in a relationship?"
+                ],
+                "Relationships & Trust": [
+                    "What qualities are most important in a partner?",
+                    "What do you consider a deal-breaker in a relationship?",
+                    "How do you define trust in a relationship?",
+                    "Have you ever had someone break your trust badly?",
+                    "What are your thoughts on what counts as cheating?",
+                    "Do you think jealousy is ever healthy?",
+                    "What does loyalty mean to you?",
+                    "How do you feel about couples sharing passwords?",
+                    "Is it okay to be friends with exes?",
+                    "What do you think is the key to a long-lasting relationship?"
+                ],
+                "Communication & Conflict": [
+                    "How do you handle disagreements in a relationship?",
+                    "What's the best way to approach you when you're upset?",
+                    "Do you prefer to talk things out immediately or need space?",
+                    "How did your family handle conflict?",
+                    "What are your thoughts on compromise?",
+                    "What could I do to make you feel more heard?",
+                    "Is there any topic you find difficult to talk about?",
+                    "How can we improve our communication?",
+                    "Do you think it's okay to go to bed angry?",
+                    "How do you usually express anger?"
+                ],
+                "Intimacy & Physical": [
+                    "What does 'intimacy' mean to you beyond the physical?",
+                    "How do you know when you're ready to be physically intimate?",
+                    "What types of physical affection do you enjoy most?",
+                    "Are there any kinds of touch you're not comfortable with?",
+                    "How do you feel about public displays of affection?",
+                    "What helps you feel comfortable being intimate?",
+                    "Do you have any boundaries around physical intimacy?",
+                    "What's your favorite way to receive physical affection?",
+                    "How important is emotional connection for physical intimacy?",
+                    "Have you ever felt awkward talking about intimacy?"
+                ],
+                "Stress & Self-Care": [
+                    "What tends to stress you out the most?",
+                    "How can I tell when you're feeling stressed?",
+                    "What's your favorite way to recharge after a rough day?",
+                    "Do you prefer alone time or company when upset?",
+                    "What self-care habits do you maintain?",
+                    "How do you usually deal with anxiety?",
+                    "What would you want me to do when you're anxious?",
+                    "Have you struggled with any mental health challenges?",
+                    "What's a sign you're really comfortable with someone?",
+                    "How do you cheer yourself up?"
+                ],
+                "Future Family": [
+                    "Do you want to get married?",
+                    "Do you want children? How many?",
+                    "What kind of parent do you imagine being?",
+                    "What values would you teach your children?",
+                    "What traditions would you continue with your kids?",
+                    "How do you feel about raising a family?",
+                    "Where would you like to raise a family?",
+                    "How important are grandparents in kids' lives?",
+                    "What's most important for a strong marriage?",
+                    "How did your parents show love to you?"
+                ],
+                "Emotional Readiness": [
+                    "How do you feel about your readiness for marriage?",
+                    "How have you grown in the last few years?",
+                    "What does emotional maturity mean to you?",
+                    "How do you handle emotional challenges?",
+                    "What support do you expect from your partner?",
+                    "Are there goals you want to achieve before marriage?",
+                    "How important is maintaining independence in marriage?",
+                    "What challenge prepared you for a committed relationship?",
+                    "In what areas do you feel most confident?",
+                    "What habits are you trying to improve?"
+                ],
+                "Marriage Commitment": [
+                    "What does marriage mean to you?",
+                    "How do you feel about spending life with one person?",
+                    "What keeps a marriage strong and healthy?",
+                    "What are your hopes for our married life?",
+                    "Do you have any fears about marriage?",
+                    "How might our relationship change after marriage?",
+                    "What does commitment look like in daily life?",
+                    "Do you believe in 'for better or for worse'?",
+                    "How would you handle challenging periods?",
+                    "What does lifelong commitment mean to you?"
+                ],
+                "Family Traditions": [
+                    "How important are family traditions to you?",
+                    "What cultural customs do you want to continue?",
+                    "What kind of relationship do you expect with in-laws?",
+                    "How much involvement do you expect from parents?",
+                    "Would you prefer joint family or nuclear family?",
+                    "How would you feel about parents living with us?",
+                    "What are your expectations for family support?",
+                    "How should we handle different family traditions?",
+                    "How important are family obligations to you?",
+                    "How would you handle family disapproval?"
+                ],
+                "Roles & Responsibilities": [
+                    "How should we divide household chores?",
+                    "What household tasks do you enjoy or dislike?",
+                    "What are your expectations of husband/wife roles?",
+                    "How do you feel about non-traditional gender roles?",
+                    "How should we make important decisions?",
+                    "How should we handle busy work periods?",
+                    "What household tasks do you want to take charge of?",
+                    "How should we address unfair division of work?",
+                    "What does an equal partnership look like to you?"
+                ],
+                "Parenting": [
+                    "How do you feel about having children?",
+                    "How open are you to adoption or fertility treatments?",
+                    "What values would you teach your children?",
+                    "How should children be disciplined?",
+                    "What kind of education do you envision?",
+                    "How important is extended family involvement?",
+                    "What aspects of your upbringing would you repeat?",
+                    "How would you handle different life paths for kids?",
+                    "How would having children change our relationship?",
+                    "How would you handle special needs or challenges?"
+                ],
+                "Communication Styles": [
+                    "How do you express yourself when upset?",
+                    "What's the best way to resolve disagreements?",
+                    "Do you prefer immediate or delayed conflict resolution?",
+                    "What helps you feel heard in discussions?",
+                    "How do you apologize or make amends?",
+                    "What topics are hard for you to discuss?",
+                    "How do you feel about couples counseling?",
+                    "What have you learned about communication?",
+                    "How do you show love daily?",
+                    "What feels like betrayal to you?"
+                ],
+                "Long-Term Vision": [
+                    "Where do you see us in 5-20 years?",
+                    "What lifestyle do you dream of?",
+                    "What personal dreams do you want to pursue?",
+                    "How important is buying a home?",
+                    "What does a successful life look like?",
+                    "How do you envision retirement?",
+                    "Do you have any non-negotiable life goals?",
+                    "How do you feel about our future together?",
+                    "What excites or scares you about the future?"
+                ],
+                "Career & Work": [
+                    "What are your career aspirations?",
+                    "Will you continue working after marriage?",
+                    "How would you handle career changes?",
+                    "Would you relocate for career opportunities?",
+                    "How do you value stability vs. passion?",
+                    "How would income differences affect us?",
+                    "What support do you expect for your career?",
+                    "Would you support further education?",
+                    "How should we handle work-life balance?",
+                    "How would you manage career and family?"
+                ],
+                "Finances": [
+                    "How should we manage our finances?",
+                    "Are you more of a saver or spender?",
+                    "Do you budget your money?",
+                    "Do you have any debts or obligations?",
+                    "What are your thoughts on loans and credit?",
+                    "How important is saving for the future?",
+                    "How should we make big financial decisions?",
+                    "How would you handle family financial help?",
+                    "What would we do in financial setbacks?",
+                    "How should we plan for the future?"
+                ],
+                "Religion & Spirituality": [
+                    "How important is religion in your life?",
+                    "What religious practices do you want to maintain?",
+                    "How do you feel about different beliefs?",
+                    "How would you introduce religion to children?",
+                    "What religious values are essential to you?",
+                    "Do you expect participation in religious customs?",
+                    "How would you handle changes in religious views?",
+                    "How would you practice faith at home?"
+                ],
+                "Independence & Space": [
+                    "How much personal space do you need?",
+                    "What do you like to do on your own?",
+                    "How do you feel about separate activities?",
+                    "What does quality time mean to you?",
+                    "How should we communicate about alone time?",
+                    "What personal boundaries are important to you?",
+                    "How can we stay close while respecting independence?",
+                    "How do you maintain your identity in relationships?"
+                ]
+            };
+
+            // --- State Variables ---
+            let appState = {
+                currentUser: null, // 'nidhi' or 'arpan'
+                currentQuestion: { id: null, text: '', source: null },
+                history: [], // Populated by API
+                currentStepId: 'step-home', // Start at user selection
+                mediaRecorder: null, audioChunks: [], audioBlob: null, audioUrl: null,
+                recordingTimerInterval: null, recordingStartTime: null,
+                isHistoryVisible: false,
+                displayedRandomQuestions: [],
+                gamification: { lovePoints: 0, streak: 0, lastStreakUpdateDate: null, dailyRandomAnswered: false, dailyManualAnswered: false }
+            };
+
+            // --- DOM Element References ---
+            const mainElement = document.getElementById('app-main');
+            const userNidhiBtn = document.getElementById('user-nidhi');
+            const userArpanBtn = document.getElementById('user-arpan');
+            const dashboardUserName = document.getElementById('dashboard-user-name');
+            const manualTab = document.getElementById('manual-tab');
+            const randomTab = document.getElementById('random-tab');
+            const manualPanel = document.getElementById('manual-panel');
+            const randomPanel = document.getElementById('random-panel');
+            const randomQuestionsList = document.getElementById('random-questions-list');
+            const customQuestionInput = document.getElementById('custom-question');
+            const submitQuestionBtn = document.getElementById('submit-question');
+            const moreQuestionsBtn = document.getElementById('more-questions');
+            const currentQuestionText = document.getElementById('current-question');
+            const recordPrompt = document.getElementById('record-prompt');
+            const recordBtn = document.getElementById('record-btn');
+            const recordingStatus = document.getElementById('recording-status');
+            const timerDisplay = document.getElementById('timer');
+            const stopRecordingBtn = document.getElementById('stop-recording');
+            const recordingSaved = document.getElementById('recording-saved');
+            const audioPreview = document.getElementById('audio-preview');
+            const reRecordBtn = document.getElementById('re-record');
+            const saveAnswerBtn = document.getElementById('save-answer');
+            const reviewQuestionText = document.getElementById('review-question-text');
+            const nidhiAnswerBox = document.getElementById('nidhi-answer-box');
+            const arpanAnswerBox = document.getElementById('arpan-answer-box');
+            const nidhiStatus = document.getElementById('nidhi-status');
+            const arpanStatus = document.getElementById('arpan-status');
+            const nidhiAnswerContent = document.getElementById('nidhi-answer-content').querySelector('.answer-content');
+            const arpanAnswerContent = document.getElementById('arpan-answer-content').querySelector('.answer-content');
+            const nidhiLocked = document.getElementById('nidhi-locked');
+            const arpanLocked = document.getElementById('arpan-locked');
+            const nidhiPending = document.getElementById('nidhi-pending');
+            const arpanPending = document.getElementById('arpan-pending');
+            const toggleHistoryBtn = document.getElementById('toggle-history');
+            const toggleHistoryText = document.getElementById('toggle-history-text');
+            const historyListContainer = document.getElementById('history-list-container');
+            const historyList = document.getElementById('history-list');
+            const toast = document.getElementById('toast');
+            const lovePointsCountEl = document.getElementById('love-points-count');
+            const streakCountEl = document.getElementById('streak-count');
+            const pointProgressIndicator = document.getElementById('point-progress-indicator');
+            const backToDashboardBtn = document.getElementById('back-to-dashboard');
+            const backToQuestionSelectBtn = document.getElementById('back-to-question-select');
+            const askAnotherQuestionFromReviewBtn = document.getElementById('ask-another-question-from-review');
+            const backToDashboardFromReviewBtn = document.getElementById('back-to-dashboard-from-review');
+            const pendingQuestionsListEl = document.getElementById('pendingQuestionsList');
+            const recentActivityListEl = document.getElementById('recentActivityList');
+            const askNewQuestionBtn = document.getElementById('askNewQuestionBtn');
+            const viewHistoryBtnDashboard = document.getElementById('viewHistoryBtnDashboard');
+            const switchUserBtn = document.getElementById('switchUserBtn');
+
+            // --- Utility Functions ---
+            const showElement = (el) => { if (el) { el.classList.remove('hidden'); el.setAttribute('aria-hidden', 'false'); } };
+            const hideElement = (el) => { if (el) { el.classList.add('hidden'); el.setAttribute('aria-hidden', 'true'); } };
+            const formatDate = (timestamp) => {
+                if (!timestamp) return 'N/A';
+                try {
+                    // Handle both numeric timestamps and ISO strings
+                    const date = typeof timestamp === 'number' ? new Date(timestamp) : new Date(timestamp);
+                    if (isNaN(date.getTime())) {
+                        console.warn('Invalid timestamp:', timestamp);
+                        return 'Invalid Date';
+                    }
+                    return date.toLocaleDateString('en-US', {
+                        year: 'numeric',
+                        month: 'short',
+                        day: 'numeric',
+                        hour: 'numeric',
+                        minute: '2-digit'
+                    });
+                } catch (error) {
+                    console.error('Error formatting date:', error);
+                    return 'Invalid Date';
+                }
+            };
+            const generateQuestionId = (text) => `q_${text.toLowerCase().replace(/[^a-z0-9]/g, '').substring(0, 50)}_${text.length}`;
+            const getTodayDateString = () => new Date().toISOString().split('T')[0];
+
+            // --- Backend Communication Functions ---
+            async function fetchApi(endpoint, options = {}) {
+                console.log(`Workspaceing API: ${endpoint}`, options);
+                try {
+                    const response = await fetch(`${API_BASE_URL}${endpoint}`, options);
+                    if (!response.ok) {
+                        let errorMsg = `HTTP error! status: ${response.status}`;
+                        try {
+                            const errorData = await response.json();
+                            errorMsg = errorData.message || errorMsg;
+                        } catch (e) { /* Ignore if error body is not JSON */ }
+                        console.error(`API fetch failed for ${endpoint}:`, response.status, errorMsg);
+                        throw new Error(errorMsg);
+                    }
+                    // Handle cases where response might be empty (e.g., DELETE)
+                    if (response.status === 204) {
+                        return null;
+                    }
+                    const data = await response.json();
+                    console.log(`API Response for ${endpoint}:`, data);
+                    return data;
+                } catch (error) {
+                    console.error(`Error during API fetch for ${endpoint}:`, error);
+                    showToast(`Network Error: ${error.message}`, "exclamation-triangle", "error");
+                    throw error; // Re-throw to allow calling function to handle
+                }
+            }
+
+            async function fetchInitialState() {
+                return fetchApi('/state');
+            }
+
+            async function fetchHistory() {
+                 return fetchApi('/history');
+            }
+
+            async function fetchPendingQuestions(userId) {
+                if (!userId) return []; // Don't fetch if no user selected
+                return fetchApi(`/pending/${userId}`);
+            }
+
+            async function fetchRecentActivity(userId) {
+                 if (!userId) return []; // Don't fetch if no user selected
+                 // Assuming /history endpoint gives all, filter/slice client-side or add specific endpoint
+                 const fullHistory = await fetchApi(`/history`); // Or a dedicated /recent_activity endpoint
+                 // Filter for activity related to the user (optional, depends on API)
+                 // Sort and take top 5
+                 const sorted = fullHistory.sort((a, b) => {
+                     const lastA = Math.max(a.answers?.nidhi?.timestamp || 0, a.answers?.arpan?.timestamp || 0, a.timestamp || 0);
+                     const lastB = Math.max(b.answers?.nidhi?.timestamp || 0, b.answers?.arpan?.timestamp || 0, b.timestamp || 0);
+                     return lastB - lastA;
+                 });
+                 return sorted.slice(0, 5);
+            }
+
+
+             // --- Toast Notification ---
+             const showToast = (message, icon = 'info-circle', type = 'info', duration = 4000) => {
+                 // Clear existing timers to prevent overlaps if called quickly
+                 if (toast.timerId) {
+                     clearTimeout(toast.timerId);
+                 }
+
+                 toast.querySelector('.content').textContent = message;
+                 const iconEl = toast.querySelector('.icon i');
+                 iconEl.className = `fas fa-${icon}`;
+                 iconEl.style.animation = 'none'; // Reset animation
+
+                 toast.classList.remove('toast-success', 'toast-warning', 'toast-error', 'toast-love', 'toast-streak', 'show'); // Reset classes
+
+                 let iconColor = 'inherit';
+                 let specialClass = '';
+
+                 switch (type) {
+                     case 'success': specialClass = 'toast-success'; iconColor = 'var(--success)'; break;
+                     case 'warning': specialClass = 'toast-warning'; iconColor = 'var(--warning)'; break;
+                     case 'error': specialClass = 'toast-error'; iconColor = 'var(--love)'; break;
+                     case 'love':
+                         specialClass = 'toast-love';
+                         iconColor = 'white';
+                         // Trigger reflow before restarting animation
+                         void iconEl.offsetWidth;
+                         iconEl.style.animation = `heartbeat 1.5s infinite ease-in-out`;
+                         break;
+                      case 'streak':
+                         specialClass = 'toast-streak';
+                         iconColor = 'white';
+                         break;
+                      case 'info': // Default case
+                         if (icon === 'spinner fa-spin') { // Specific case for spinner
+                            iconColor = 'var(--primary)';
+                         }
+                         break;
+                 }
+
+                 if (specialClass) toast.classList.add(specialClass);
+                 iconEl.style.color = iconColor; // Set color regardless of class
+
+                 // Use requestAnimationFrame to ensure classes are applied before 'show'
+                 requestAnimationFrame(() => {
+                    toast.classList.add('show');
+                 });
+
+
+                 toast.timerId = setTimeout(() => {
+                     toast.classList.remove('show');
+                     toast.timerId = null; // Clear the timer ID
+                 }, duration);
+             };
+
+
+            // --- Navigation / Step Management ---
+            const showSection = (sectionId) => {
+                 console.log(`Navigating to section: ${sectionId}`);
+                 const currentSection = document.getElementById(appState.currentStepId);
+                 const nextSection = document.getElementById(sectionId);
+
+                 if (currentSection && currentSection !== nextSection) {
+                     // Start fade-out animation
+                     currentSection.classList.remove('fade-enter-active');
+                     currentSection.classList.add('fade-leave-active', 'fade-leave-from');
+
+                     // After animation duration, hide the element and show the next one
+                     setTimeout(() => {
+                         hideElement(currentSection);
+                         currentSection.classList.remove('fade-leave-active', 'fade-leave-from');
+
+                         appState.currentStepId = sectionId; // Update state *after* hiding previous
+
+                         if (nextSection) {
+                             showElement(nextSection);
+                             // Start fade-in animation
+                             nextSection.classList.add('fade-enter-active', 'fade-enter-from');
+                             // Use rAF to ensure the 'from' state is applied before transitioning
+                             requestAnimationFrame(() => {
+                                 nextSection.classList.remove('fade-enter-from');
+                                 nextSection.classList.add('fade-enter-to');
+                                 // Clean up 'to' state after animation
+                                 setTimeout(() => nextSection.classList.remove('fade-enter-to'), 400);
+                             });
+                         }
+                         window.scrollTo({ top: 0, behavior: 'smooth' });
+                     }, 300); // Match CSS transition duration
+                 } else if (nextSection && appState.currentStepId !== sectionId) {
+                      // Initial load or direct jump without animation
+                      document.querySelectorAll('#app-main > section.section').forEach(sec => hideElement(sec));
+                      appState.currentStepId = sectionId;
+                      showElement(nextSection);
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                 } else if (nextSection && appState.currentStepId === sectionId) {
+                    // Already on the target section, maybe just scroll to top
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                 }
+
+                 // Special handling for dashboard loading
+                 if (sectionId === 'dashboard') {
+                    if (!appState.currentUser) {
+                        console.warn("Trying to show dashboard without a selected user. Redirecting to home.");
+                        showSection('step-home'); // Redirect if no user selected
+                        showToast("Please select a user first.", "user-alt-slash", "warning");
+                    } else {
+                        loadDashboard(); // Load/refresh dashboard data when shown
+                    }
+                 }
+                 // Update progress indicator if navigating to question select
+                 if (sectionId === 'step-question-select') {
+                     updatePointProgressIndicator();
+                     setActiveTab('manual-tab'); // Default to manual tab
+                 }
+            };
+
+
+            // --- Point & Streak Logic (UI Update Only) ---
+            const updateGamificationUI = () => {
+                console.log(`[UI Update] Setting Love Points: ${appState.gamification.lovePoints}, Streak: ${appState.gamification.streak}`); // Log values being set
+                lovePointsCountEl.textContent = appState.gamification.lovePoints;
+                streakCountEl.textContent = appState.gamification.streak;
+            };
+            const updatePointProgressIndicator = () => { /* ... same logic ... */
+                 if (appState.currentStepId !== 'step-question-select' || !appState.currentUser) {
+                    hideElement(pointProgressIndicator); return;
+                 }
+                 // Note: Using client-side flags which might mismatch backend if refreshed mid-session.
+                 // Backend is the source of truth for actual point award. This is a visual guide.
+                 const randomDone = appState.gamification.dailyRandomAnswered;
+                 const manualDone = appState.gamification.dailyManualAnswered;
+                 let text = ''; let icon = 'fa-question-circle';
+                 if (!randomDone && !manualDone) { text = `Ask 1 <strong>Random</strong> & 1 from <strong>Your Mind</strong> for +${LOVE_POINTS_PER_PAIR} <i class="fas fa-heart text-red-400"></i>!`; icon = 'fa-info-circle'; }
+                 else if (randomDone && !manualDone) { text = `Great! Now ask a question from <strong>Your Mind</strong> to get +${LOVE_POINTS_PER_PAIR} <i class="fas fa-heart text-red-400"></i>!`; icon = 'fa-edit'; }
+                 else if (!randomDone && manualDone) { text = `Awesome! Now ask a <strong>Random</strong> question to get +${LOVE_POINTS_PER_PAIR} <i class="fas fa-heart text-red-400"></i>!`; icon = 'fa-random'; }
+                 else { text = `You've earned today's point! ✨ Ready to ask more?`; icon = 'fa-check-circle'; } // Both flags were true (or points awarded)
+                 pointProgressIndicator.innerHTML = `<i class="fas ${icon}"></i> ${text}`; showElement(pointProgressIndicator);
+            };
+
+            // --- Core App Logic ---
+            const setCurrentUser = async (user) => {
+                 if (user !== 'nidhi' && user !== 'arpan') return;
+                 appState.currentUser = user;
+                 // Update UI immediately
+                 userNidhiBtn.classList.toggle('active-nidhi', user === 'nidhi'); userNidhiBtn.setAttribute('aria-pressed', user === 'nidhi');
+                 userArpanBtn.classList.toggle('active-arpan', user === 'arpan'); userArpanBtn.setAttribute('aria-pressed', user === 'arpan');
+                 const userNameCapitalized = user.charAt(0).toUpperCase() + user.slice(1);
+                 if(dashboardUserName) dashboardUserName.textContent = userNameCapitalized + "'s"; // Update dashboard title personalization
+
+                 showToast(`Hi ${userNameCapitalized}! Welcome to your dashboard.`, 'user-check', 'success');
+
+                 // Fetch updated state for the selected user (points, streak, daily progress)
+                 try {
+                     const stateData = await fetchInitialState(); // This should ideally filter by user on backend or return both
+                     // Assuming fetchInitialState now returns data relevant to the current context (maybe includes both users' progress?)
+                     // For now, let's assume it gives general points/streak and we reset daily flags based on *client* action
+                     appState.gamification.lovePoints = stateData.lovePoints || 0;
+                     appState.gamification.streak = stateData.streak || 0;
+                     appState.gamification.lastStreakUpdateDate = stateData.lastStreakUpdateDate;
+                     // IMPORTANT: Get daily completion status FROM the backend state for this user
+                     appState.gamification.dailyRandomAnswered = stateData.users?.[user]?.dailyRandomAnswered || false; // Adjust based on actual API response structure
+                     appState.gamification.dailyManualAnswered = stateData.users?.[user]?.dailyManualAnswered || false; // Adjust based on actual API response structure
++                    console.log(`[State Update - setCurrentUser] Fetched state: Points=${appState.gamification.lovePoints}, Streak=${appState.gamification.streak}, RandomDone=${appState.gamification.dailyRandomAnswered}, ManualDone=${appState.gamification.dailyManualAnswered}`);
+                     updateGamificationUI();
+                 } catch (error) {
+                     console.error("Error fetching state after user selection:", error);
+                     showToast("Error fetching user state.", "exclamation-triangle", "error"); // Added user-visible feedback
+                     // Use defaults or keep previous state? For now, log error and continue.
+                 }
+
+                 // Navigate to the dashboard
+                 showSection('dashboard'); // This will trigger loadDashboard()
+            };
+            const setActiveTab = (tabId) => { /* ... same logic ... */
+                const isManual = tabId === 'manual-tab'; manualTab.setAttribute('aria-selected', isManual); randomTab.setAttribute('aria-selected', !isManual);
+                 if (isManual) { showElement(manualPanel); hideElement(randomPanel); customQuestionInput.focus(); }
+                 else { hideElement(manualPanel); showElement(randomPanel); if (appState.displayedRandomQuestions.length === 0) { generateRandomQuestionsUI(); } }
+            };
+            const getUnansweredQuestions = () => {
+                console.log('Getting unanswered questions...');
+                const answeredIds = new Set(appState.history.map(q => q.id));
+                console.log('Answered question IDs:', Array.from(answeredIds));
+                
+                let allQuestions = [];
+                
+                // Get selected topic
+                const selectedTopic = document.getElementById('question-topic').value;
+                console.log('Selected topic:', selectedTopic);
+                
+                // If "all" is selected, combine all questions
+                if (selectedTopic === 'all') {
+                    Object.values(QUESTIONS_POOL).forEach(questions => {
+                        allQuestions = allQuestions.concat(questions);
+                    });
+                } else {
+                    // Get questions from selected topic
+                    allQuestions = QUESTIONS_POOL[selectedTopic] || [];
+                }
+                
+                console.log('Total questions in pool:', allQuestions.length);
+                
+                // Filter out answered questions
+                let pool = allQuestions.filter(qText => !answeredIds.has(generateQuestionId(qText)));
+                console.log('Questions after filtering answered ones:', pool.length);
+                
+                // If pool is too small, use all questions from the selected topic
+                if (pool.length < 5) {
+                    console.log('Pool too small, using all questions from topic');
+                    pool = selectedTopic === 'all' ? [...allQuestions] : [...QUESTIONS_POOL[selectedTopic]];
+                }
+                
+                return pool;
+            };
+            const generateRandomQuestionsUI = () => {
+                console.log('Generating random questions UI...');
+                
+                // Get the CURRENT element reference inside the function
+                const randomQuestionsList = document.getElementById('random-questions-list');
+
+                // Log the target list element
+                console.log('Target list element:', randomQuestionsList);
+                if (!randomQuestionsList || !(randomQuestionsList instanceof Element)) {
+                    console.error('randomQuestionsList is not a valid DOM element!');
+                    return;
+                }
+                // Removed the offsetParent check here as it causes unnecessary warnings
+                // due to timing issues with element visibility changes.
+
+                randomQuestionsList.innerHTML = '';
+                console.log('List cleared. innerHTML:', randomQuestionsList.innerHTML);
+                appState.displayedRandomQuestions = [];
+                
+                const availableQuestions = getUnansweredQuestions();
+                console.log('Available questions:', availableQuestions.length);
+                
+                const shuffled = [...availableQuestions].sort(() => 0.5 - Math.random());
+                const selectedQuestions = shuffled.slice(0, 5);
+                console.log('Selected questions:', selectedQuestions.length);
+                
+                if (selectedQuestions.length === 0) {
+                    console.log('No questions available');
+                    randomQuestionsList.innerHTML = '<p class="text-center text-gray-500 p-4">No questions available in this category.</p>';
+                    return;
+                }
+                
+                selectedQuestions.forEach((questionText, index) => {
+                    console.log(`Processing question ${index + 1}:`, questionText);
+                    appState.displayedRandomQuestions.push(questionText);
+                    const questionItem = document.createElement('div');
+                    questionItem.className = 'question-item list-item shadow-sm';
+                    questionItem.setAttribute('role', 'button');
+                    questionItem.tabIndex = 0;
+                    
+                    questionItem.innerHTML = `
+                        <p class="text-gray-700 mb-2">${questionText}</p>
+                        <div class="text-right">
+                            <span class="select-question tag tag-primary">
+                                <i class="fas fa-check mr-1"></i> Select
+                            </span>
+                        </div>
+                    `;
+                    
+                    const selectAction = () => {
+                        setQuestion(questionText, 'random');
+                        showSection('step-record');
+                    };
+                    
+                    questionItem.addEventListener('click', selectAction);
+                    questionItem.addEventListener('keydown', (e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            selectAction();
+                        }
+                    });
+                    
+                    console.log(`Appending item ${index + 1}:`, questionItem.outerHTML.substring(0, 100) + '...'); // Log truncated HTML
+                    try {
+                        randomQuestionsList.appendChild(questionItem);
+                        console.log(`Item ${index + 1} successfully appended.`);
+                    } catch (error) {
+                         console.error(`Error appending item ${index + 1}:`, error);
+                    }
+                });
+                console.log('Finished generating random questions UI.');
+            };
+             const setQuestion = (questionText, source) => { /* ... same logic ... */
+                 if (!appState.currentUser) { showToast('Please select user first!', 'user-times', 'warning'); showSection('step-home'); return; }
+                 appState.currentQuestion = { id: generateQuestionId(questionText), text: questionText, source: source };
+                 console.log(`Set question (Source: ${source}):`, questionText);
+                 currentQuestionText.textContent = appState.currentQuestion.text; resetRecordingUI(false);
+                 updatePointProgressIndicator();
+            };
+
+            // --- Recording Functions ---
+            // startRecordingTimer, stopRecordingTimer, startRecording, stopRecordingFunction, resetRecordingUI remain the same
+            const startRecordingTimer=()=>{appState.recordingStartTime=Date.now();clearInterval(appState.recordingTimerInterval);appState.recordingTimerInterval=setInterval(()=>{const e=Math.floor((Date.now()-appState.recordingStartTime)/1e3),t=Math.floor(e/60),a=e%60;timerDisplay.textContent=`${t}:${a.toString().padStart(2,"0")}`},1e3)};const stopRecordingTimer=()=>{clearInterval(appState.recordingTimerInterval);appState.recordingTimerInterval=null};const startRecording=async()=>{if(!navigator.mediaDevices||!navigator.mediaDevices.getUserMedia){showToast("Audio recording not supported.","microphone-slash","error");return}try{const e=await navigator.mediaDevices.getUserMedia({audio:!0});let options={mimeType:"audio/webm"};if(!MediaRecorder.isTypeSupported(options.mimeType)){console.log("audio/webm not supported, trying audio/ogg");options={mimeType:"audio/ogg"};if(!MediaRecorder.isTypeSupported(options.mimeType)){console.log("audio/ogg not supported, fallback to default");options={}}}appState.mediaRecorder=new MediaRecorder(e,options);appState.audioChunks=[];appState.mediaRecorder.addEventListener("dataavailable",e=>{e.data.size>0&&appState.audioChunks.push(e.data)});appState.mediaRecorder.addEventListener("stop",()=>{stopRecordingTimer();if(appState.audioChunks.length===0){console.warn("No audio chunks recorded.");resetRecordingUI();showToast("Recording failed: No audio data.","warning","warning");return}appState.audioBlob=new Blob(appState.audioChunks,{type:options.mimeType});const t=new FileReader;t.onloadend=()=>{appState.audioUrl=t.result;audioPreview.src=appState.audioUrl;hideElement(recordingStatus);showElement(recordingSaved);saveAnswerBtn.disabled=!1;reRecordBtn.disabled=!1};t.onerror=e=>{console.error("FileReader error:",e);showToast("Failed to process audio.","exclamation-triangle","error");resetRecordingUI()};t.readAsDataURL(appState.audioBlob);e.getTracks().forEach(e=>e.stop())});appState.mediaRecorder.start();startRecordingTimer();hideElement(recordPrompt);hideElement(recordingSaved);showElement(recordingStatus);recordBtn.classList.add("is-recording");showToast("Recording started...","microphone-alt", 'info', 2000)}catch(e){console.error("Mic error:",e);if(e.name==="NotAllowedError"||e.name==="PermissionDeniedError")showToast("Microphone access denied. Please allow it.","microphone-slash","warning");else showToast("Could not access microphone.","microphone-slash","error")}};const stopRecordingFunction=()=>{if(appState.mediaRecorder&&appState.mediaRecorder.state==="recording"){appState.mediaRecorder.stop();recordBtn.classList.remove("is-recording");showToast("Recording stopped. Processing...","stop-circle", 'info', 2000);saveAnswerBtn.disabled=!0;reRecordBtn.disabled=!0}};const resetRecordingUI=(e=!0)=>{stopRecordingTimer();if(appState.mediaRecorder&&appState.mediaRecorder.state!=="inactive")try{appState.mediaRecorder.stop();appState.mediaRecorder.stream?.getTracks().forEach(e=>e.stop())}catch(t){console.warn("Error stopping recorder on reset:",t)}recordBtn.classList.remove("is-recording");appState.mediaRecorder=null;appState.audioChunks=[];appState.audioBlob=null;appState.audioUrl=null;audioPreview.src="";timerDisplay.textContent="0:00";hideElement(recordingStatus);hideElement(recordingSaved);e&&showElement(recordPrompt)};
+
+            // --- Saving Answer (Uses fetch) ---
+            const saveAndReview = async () => {
+                // Add validation
+                if (!appState.currentUser || !appState.currentQuestion.text || !appState.currentQuestion.source || !appState.audioBlob) {
+                    showToast('Missing required information for saving answer', 'exclamation-circle', 'error');
+                    return;
+                }
+
+                // Log the values being sent
+                console.log('Sending answer:', {
+                    userId: appState.currentUser,
+                    questionText: appState.currentQuestion.text,
+                    source: appState.currentQuestion.source,
+                    audioBlob: appState.audioBlob ? 'present' : 'missing'
+                });
+
+                saveAnswerBtn.disabled = true; reRecordBtn.disabled = true;
+                showToast("Saving answer...", "spinner fa-spin", "info", 60000); // Long timeout while saving
+
+                const currentQuestionIdBeforeReset = appState.currentQuestion.id;
+                const currentQuestionTextBeforeReset = appState.currentQuestion.text; // Store text too for review
+
+                const formData = new FormData();
+                formData.append('userId', appState.currentUser);
+                formData.append('questionText', appState.currentQuestion.text);
+                formData.append('source', appState.currentQuestion.source);
+                const filename = `${appState.currentUser}_${Date.now()}.webm`;
+                // Ensure audioBlob is valid before appending
+                if (appState.audioBlob instanceof Blob && appState.audioBlob.size > 0) {
+                    formData.append('audioFile', appState.audioBlob, filename);
+                } else {
+                    console.error("Invalid or empty audioBlob:", appState.audioBlob);
+                    showToast('Error: Invalid audio data.', 'exclamation-triangle', 'error');
+                    saveAnswerBtn.disabled = false; reRecordBtn.disabled = false; // Re-enable buttons
+                    return; // Don't proceed
+                }
+
+                // Log the FormData contents
+                console.log("FormData contents before sending:"); // THIS LOG IS NEEDED
+                for (let pair of formData.entries()) {
+                    console.log(pair[0] + ': ' + (pair[1] instanceof File || pair[1] instanceof Blob ? 'File/Blob: ' + pair[1].name + ' Size: ' + pair[1].size : pair[1]));
+                }
+
+                // Optimistic UI update for daily flags (backend confirms)
+                if (appState.currentQuestion.source === 'random') appState.gamification.dailyRandomAnswered = true;
+                if (appState.currentQuestion.source === 'manual') appState.gamification.dailyManualAnswered = true;
+                updatePointProgressIndicator(); // Update indicator based on optimistic flags
+
+                try {
+                    const result = await fetchApi('/answer', { method: 'POST', body: formData });
+                     // { lovePoints, streak, lastStreakUpdateDate, pointAwarded, dailyRandomAnswered, dailyManualAnswered } <-- Expected from backend
+
+                     // Update frontend state from authoritative backend response
+                     appState.gamification.lovePoints = result.lovePoints;
+                     appState.gamification.streak = result.streak;
+                     appState.gamification.lastStreakUpdateDate = result.lastStreakUpdateDate;
+                     // Update daily flags based on the *backend's* confirmation
+                     appState.gamification.dailyRandomAnswered = result.dailyRandomAnswered;
+                     appState.gamification.dailyManualAnswered = result.dailyManualAnswered;
+                     updateGamificationUI();
+                     updatePointProgressIndicator(); // Update indicator again with confirmed state
+
+                     showToast('Answer saved!', 'check-circle', 'success');
+                     console.log(`[State Update - saveAndReview] Received from /api/answer: Points=${result.lovePoints}, Streak=${result.streak}, PointAwarded=${result.pointAwarded}, RandomDone=${result.dailyRandomAnswered}, ManualDone=${result.dailyManualAnswered}`); // Log received data
+
+                     // Show specific point toast based on amount awarded
+                     if (result.pointAwarded === 1) {
+                         setTimeout(() => showToast(`+1 Point! ❤️`, 'heart', 'love'), 300);
+                     } else if (result.pointAwarded === 5) {
+                         setTimeout(() => showToast(`+5 Points! ❤️`, 'heart', 'love'), 300);
+                     }
+
+                     // Show streak toast if it increased (independent of points awarded *this time* if update happened earlier today)
+                     const previousStreak = parseInt(streakCountEl.textContent, 10) || 0;
+                     if (result.streak > 0 && result.streak > previousStreak) { // Check if streak increased compared to UI
+                           // Original streak toast logic remains based on the *final* streak count from backend
+                           // Delay streak toast slightly after point toast
+                           setTimeout(() => {
+                              showToast(`Streak at ${result.streak} days! 🔥`, 'fire', 'streak');
+                           }, result.pointAwarded > 0 ? 600 : 300); // Delay more if point toast was shown
+                     }
+
+                     await refreshHistory();
+                     // Find the updated question using ID *or* text as fallback
+                     let reviewedQuestionData = appState.history.find(q => q.id === currentQuestionIdBeforeReset);
+                     if (!reviewedQuestionData) { // Fallback if ID generation differs or was temporary
+                         reviewedQuestionData = appState.history.find(q => q.text === currentQuestionTextBeforeReset);
+                     }
+
+
+                     if (reviewedQuestionData) {
+                         renderReviewScreen(reviewedQuestionData);
+                         showSection('step-review');
+                     } else {
+                         console.error("History entry not found after refresh for:", currentQuestionTextBeforeReset);
+                         showSection('dashboard'); // Go back to dashboard if review fails
+                         showToast('Answer saved, but could not load review.', 'warning', 'warning');
+                     }
+
+                 } catch (error) {
+                     console.error("Failed to save answer:", error);
+                     // No automatic rollback of optimistic UI - user might retry. Backend state is truth.
+                     showToast(`Error saving: ${error.message}`, 'exclamation-triangle', 'error');
+                 } finally {
+                     resetRecordingUI(false);
+                     saveAnswerBtn.disabled = false; reRecordBtn.disabled = false;
+                     appState.currentQuestion = { id: null, text: '', source: null }; // Clear transient question state
+                 }
+            };
+
+            // --- UI Rendering Functions ---
+            const renderReviewScreen = (questionData) => { /* ... same logic ... */
+                 if (!questionData || !questionData.id) return;
+                 reviewQuestionText.textContent = `"${questionData.text}"`;
+                 const nidhiAnswer = questionData.answers?.nidhi; const arpanAnswer = questionData.answers?.arpan;
+                 const nidhiHasAnswered = !!nidhiAnswer?.audioUrl; const arpanHasAnswered = !!arpanAnswer?.audioUrl; const bothAnswered = nidhiHasAnswered && arpanHasAnswered;
+                 nidhiStatus.textContent = nidhiHasAnswered ? 'Answered' : 'Not Answered'; nidhiStatus.className = `tag ${nidhiHasAnswered ? 'badge-nidhi' : 'badge-neutral'}`; // Use badges for consistency
+                 if (nidhiHasAnswered) { nidhiAnswerContent.querySelector('audio').src = nidhiAnswer.audioUrl; nidhiAnswerContent.querySelector('.date span').textContent = formatDate(nidhiAnswer.timestamp); showElement(nidhiAnswerContent); hideElement(nidhiPending); hideElement(nidhiLocked); } else { hideElement(nidhiAnswerContent); hideElement(nidhiLocked); showElement(nidhiPending); }
+                 arpanStatus.textContent = arpanHasAnswered ? 'Answered' : 'Not Answered'; arpanStatus.className = `tag ${arpanHasAnswered ? 'badge-arpan' : 'badge-neutral'}`; // Use badges for consistency
+                 if (arpanHasAnswered) { arpanAnswerContent.querySelector('audio').src = arpanAnswer.audioUrl; arpanAnswerContent.querySelector('.date span').textContent = formatDate(arpanAnswer.timestamp); showElement(arpanAnswerContent); hideElement(arpanPending); hideElement(arpanLocked); } else { hideElement(arpanAnswerContent); hideElement(arpanLocked); showElement(arpanPending); }
+                 if (!bothAnswered) { if (nidhiHasAnswered && !arpanHasAnswered) showElement(arpanLocked); if (arpanHasAnswered && !nidhiHasAnswered) showElement(nidhiLocked); } else { hideElement(nidhiLocked); hideElement(arpanLocked); }
+                 document.querySelectorAll('#history-list .question-item').forEach(item => { item.classList.toggle('selected', item.dataset.questionId === questionData.id); });
+            };
+            const renderHistoryList = () => { /* ... same logic ... */
+                 historyList.innerHTML = '';
+                 if (!appState.history || appState.history.length === 0) { historyList.innerHTML = '<p class="text-center text-gray-500 p-4">No questions answered yet.</p>'; return; }
+                 // Sort by most recent activity (either answer)
+                 const sortedHistory = [...appState.history].sort((a, b) => {
+                     const lastA = Math.max(a.answers?.nidhi?.timestamp || 0, a.answers?.arpan?.timestamp || 0, a.timestamp || 0); // Consider question timestamp too
+                     const lastB = Math.max(b.answers?.nidhi?.timestamp || 0, b.answers?.arpan?.timestamp || 0, b.timestamp || 0);
+                     return lastB - lastA;
+                 });
+                 sortedHistory.forEach((q) => {
+                    const historyItem = document.createElement('div'); historyItem.className = 'question-item list-item'; historyItem.dataset.questionId = q.id; historyItem.setAttribute('role', 'button'); historyItem.tabIndex = 0;
+                    const nidhiDone = !!q.answers?.nidhi?.audioUrl; const arpanDone = !!q.answers?.arpan?.audioUrl; const bothDone = nidhiDone && arpanDone;
+                    historyItem.innerHTML = `<p class="font-medium text-gray-700 mb-2 text-sm">${q.text}</p><div class="flex flex-wrap gap-2"><span class="badge ${nidhiDone ? 'badge-nidhi' : 'badge-neutral'}"><i class="fas fa-female mr-1"></i> N <i class="fas ${nidhiDone ? 'fa-check' : 'fa-times'} ml-1"></i></span><span class="badge ${arpanDone ? 'badge-arpan' : 'badge-neutral'}"><i class="fas fa-male mr-1"></i> A <i class="fas ${arpanDone ? 'fa-check' : 'fa-times'} ml-1"></i></span><span class="badge ${bothDone ? 'badge-unlocked' : 'badge-locked'}"><i class="fas ${bothDone ? 'fa-unlock' : 'fa-lock'} mr-1"></i> ${bothDone ? 'Unlocked' : 'Locked'}</span></div>`;
+                    const reviewAction = () => { const questionData = appState.history.find(histQ => histQ.id === q.id); if (questionData) { renderReviewScreen(questionData); showSection('step-review'); if (appState.isHistoryVisible) toggleHistoryVisibility(false); showToast(`Reviewing: ${q.text.substring(0, 30)}...`, 'eye', 'info', 2000); } else { showToast('Error loading question details.', 'exclamation-triangle', 'error'); } };
+                    historyItem.addEventListener('click', reviewAction); historyItem.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); reviewAction(); } });
+                    historyList.appendChild(historyItem);
+                 });
+            };
+            // Make toggleHistoryVisibility globally accessible for onclick
+            window.toggleHistoryVisibility = (forceShow = null) => {
+                 const shouldBeVisible = forceShow !== null ? forceShow : !appState.isHistoryVisible;
+                 appState.isHistoryVisible = shouldBeVisible;
+                 toggleHistoryBtn.setAttribute('aria-expanded', shouldBeVisible);
+                 toggleHistoryText.textContent = shouldBeVisible ? 'Hide' : 'Show';
+                 toggleHistoryBtn.querySelector('i').classList.toggle('rotate-180', shouldBeVisible);
+                 const dashboardHistoryBtn = document.getElementById('viewHistoryBtnDashboard');
+                 if (dashboardHistoryBtn) {
+                     dashboardHistoryBtn.classList.toggle('active', shouldBeVisible); // Optional: visually indicate active state
+                 }
+
+                 if (shouldBeVisible) {
+                     showElement(historyListContainer);
+                     historyListContainer.style.opacity = 0; // Start transparent for fade in
+                     historyListContainer.style.transition = 'opacity 0.4s ease';
+                     requestAnimationFrame(() => { historyListContainer.style.opacity = 1; });
+                 } else {
+                     historyListContainer.style.opacity = 0;
+                     setTimeout(() => { hideElement(historyListContainer); }, 400); // Hide after fade
+                 }
+             };
+
+             // --- Dashboard Specific Functions ---
+             async function loadDashboard() {
+                 if (!appState.currentUser) return; // Guard against loading without user
+                 console.log("Loading dashboard for:", appState.currentUser);
+                 // Show loading placeholders
+                 pendingQuestionsListEl.innerHTML = '<p class="text-center text-gray-500 py-4">Loading pending questions...</p>';
+                 recentActivityListEl.innerHTML = '<p class="text-center text-gray-500 py-4">Loading recent activity...</p>';
+
+                 try {
+                     // Fetch both in parallel
+                     const [pendingQuestions, recentActivity, historyData] = await Promise.all([
+                         fetchPendingQuestions(appState.currentUser),
+                         fetchRecentActivity(appState.currentUser), // Assuming this fetches recent items directly
+                         fetchHistory() // Fetch full history for the toggle list
+                     ]);
+
+                     appState.history = historyData || []; // Update history state
+                     displayPendingQuestions(pendingQuestions);
+                     displayRecentActivity(recentActivity);
+                     renderHistoryList(); // Render the full history list (it starts hidden)
+
+                 } catch (error) {
+                     console.error('Error loading dashboard data:', error);
+                     pendingQuestionsListEl.innerHTML = '<p class="text-center text-red-500 py-4">Error loading pending questions.</p>';
+                     recentActivityListEl.innerHTML = '<p class="text-center text-red-500 py-4">Error loading recent activity.</p>';
+                     showToast('Failed to load dashboard data.', "exclamation-triangle", "error");
+                 }
+             }
+
+             function displayPendingQuestions(questions) {
+                 if (!questions || questions.length === 0) {
+                     pendingQuestionsListEl.innerHTML = '<p class="text-center text-gray-500 py-4">No questions waiting for you!</p>';
+                     return;
+                 }
+                 pendingQuestionsListEl.innerHTML = questions.map(q => {
+                     // Ensure q has necessary properties (id, text, asked_by)
+                     const questionId = q.id || generateQuestionId(q.text); // Fallback ID generation
+                     const askedByText = q.asked_by ? (q.asked_by === appState.currentUser ? 'You' : (appState.currentUser === 'nidhi' ? 'Arpan' : 'Nidhi')) : 'Unknown';
+                     return `
+                         <div class="question-card" data-question-id="${questionId}">
+                             <h4>${q.text || 'Unknown Question'}</h4>
+                             <p class="text-muted text-xs">Asked by ${askedByText}</p>
+                             <button class="btn btn-sm btn-primary" onclick="answerPendingQuestion('${questionId}', \`${q.text}\`)">
+                                 <i class="fas fa-microphone-alt mr-1"></i> Answer Now
+                             </button>
+                         </div>
+                     `;
+                 }).join('');
+             }
+
+            // Make answerPendingQuestion globally accessible for onclick
+             window.answerPendingQuestion = (questionId, questionText) => {
+                 console.log("Answering pending question:", questionId, questionText);
+                 // Find the full question data in history if possible (for source etc.)
+                 const historyQuestion = appState.history.find(q => q.id === questionId || q.text === questionText);
+                 const source = historyQuestion?.source || 'random'; // Determine source, changed default to 'random'
+
+                 setQuestion(questionText, source); // Use the provided text and determined source
+                 showSection('step-record');
+             };
+
+
+             function displayRecentActivity(activities) {
+                 if (!activities || activities.length === 0) {
+                     recentActivityListEl.innerHTML = '<p class="text-center text-gray-500 py-4">No recent activity.</p>';
+                     return;
+                 }
+                 recentActivityListEl.innerHTML = activities.map(a => {
+                     const isCurrentUser = a.answers && (a.answers.nidhi?.timestamp > (a.answers.arpan?.timestamp || 0) ? 'nidhi' : 'arpan') === appState.currentUser;
+                     const actionUser = a.answers?.nidhi ? 'Nidhi' : (a.answers?.arpan ? 'Arpan' : (a.asked_by || 'Someone'));
+                     const actionVerb = (a.answers?.nidhi || a.answers?.arpan) ? 'answered' : 'asked';
+                     const actionIcon = actionVerb === 'asked' ? 'fa-question-circle text-blue-500' : 'fa-microphone text-green-500';
+                     
+                     // Get the most recent timestamp, with validation
+                     const timestamp = Math.max(
+                         a.answers?.nidhi?.timestamp || 0,
+                         a.answers?.arpan?.timestamp || 0,
+                         a.timestamp || 0
+                     );
+                     
+                     return `
+                         <div class="activity-item">
+                             <p>
+                                 <i class="fas ${actionIcon} mr-2"></i>
+                                 ${actionUser === appState.currentUser ? 'You' : actionUser} ${actionVerb}: "${a.text}"
+                             </p>
+                             <small class="text-muted">${formatDate(timestamp)}</small>
+                         </div>
+                     `;
+                 }).join('');
+             }
+
+            // Helper to refresh history from backend
+             async function refreshHistory() {
+                 console.log("Refreshing history...");
+                 try {
+                     appState.history = await fetchHistory() || [];
+                     renderHistoryList();
+                 } catch (error) {
+                     console.error("Failed to refresh history:", error);
+                 }
+             }
+
+
+            // --- Event Listeners ---
+            userNidhiBtn.addEventListener('click', () => setCurrentUser('nidhi'));
+            userArpanBtn.addEventListener('click', () => setCurrentUser('arpan'));
+            userNidhiBtn.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') setCurrentUser('nidhi'); });
+            userArpanBtn.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') setCurrentUser('arpan'); });
+
+            // Back Buttons
+            backToDashboardBtn.addEventListener('click', () => showSection('dashboard')); // From Q Select to Dashboard
+            backToQuestionSelectBtn.addEventListener('click', () => { showSection('step-question-select'); resetRecordingUI(true); }); // From Record to Q Select
+            backToDashboardFromReviewBtn.addEventListener('click', () => showSection('dashboard')); // From Review to Dashboard
+
+            // Navigation from Review/Dashboard
+            askAnotherQuestionFromReviewBtn.addEventListener('click', () => showSection('step-question-select'));
+            
+            // Dashboard Action Buttons
+            if (askNewQuestionBtn) {
+                askNewQuestionBtn.addEventListener('click', () => {
+                    console.log('Ask New Question button clicked');
+                    showSection('step-question-select');
+                });
+            } else {
+                console.error('Could not find #askNewQuestionBtn');
+            }
+
+            if (viewHistoryBtnDashboard) {
+                viewHistoryBtnDashboard.addEventListener('click', () => {
+                    console.log('View History button clicked');
+                    toggleHistoryVisibility(true);
+                });
+            } else {
+                console.error('Could not find #viewHistoryBtnDashboard');
+            }
+
+            if (switchUserBtn) {
+                switchUserBtn.addEventListener('click', () => {
+                    console.log('Switch User button clicked');
+                    showSection('step-home');
+                });
+            } else {
+                console.error('Could not find #switchUserBtn');
+            }
+
+            // Tabs
+            manualTab.addEventListener('click', () => setActiveTab('manual-tab'));
+            randomTab.addEventListener('click', () => setActiveTab('random-tab'));
+            moreQuestionsBtn.addEventListener('click', generateRandomQuestionsUI);
+
+            // Question Submission
+            submitQuestionBtn.addEventListener('click', () => { const text = customQuestionInput.value.trim(); if (text) { setQuestion(text, 'manual'); showSection('step-record'); customQuestionInput.value = ''; } else { showToast('Please type a question.', 'exclamation-circle', 'warning'); } });
+            customQuestionInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') { e.preventDefault(); submitQuestionBtn.click(); } });
+
+            // Recording Controls
+            recordBtn.addEventListener('click', startRecording);
+            stopRecordingBtn.addEventListener('click', stopRecordingFunction);
+            reRecordBtn.addEventListener('click', () => resetRecordingUI(true));
+            saveAnswerBtn.addEventListener('click', saveAndReview);
+
+            // History Toggle (Listener on the button in the header/dashboard)
+            toggleHistoryBtn.addEventListener('click', () => toggleHistoryVisibility()); // Button within Dashboard toggles the list
+
+
+            // --- Initialization ---
+            async function initializeApp() {
+                 document.getElementById('current-year').textContent = new Date().getFullYear();
+                 showSection('step-home'); // Start at user selection
+
+                 // Pre-fetch general state if needed (like total points/streak) before user selection
+                 try {
+                     const initialState = await fetchInitialState();
+                     // Use only non-user-specific data initially
+                     appState.gamification.lovePoints = initialState.lovePoints || 0;
+                     appState.gamification.streak = initialState.streak || 0;
+                     updateGamificationUI();
+                     // Full history can also be pre-fetched
+                     appState.history = await fetchHistory() || [];
+                     renderHistoryList(); // Render hidden history list
+                 } catch (error) {
+                     console.error("Error during initial data fetch:", error);
+                     showToast("Could not load initial data. Some features might be limited.", "exclamation-triangle", "warning");
+                     // Set defaults
+                     appState.gamification.lovePoints = 0;
+                     appState.gamification.streak = 0;
+                     updateGamificationUI();
+                     historyList.innerHTML = '<p class="text-center text-red-500 p-4">Error loading history.</p>';
+                 }
+             }
+
+             initializeApp(); // Start the app
+
+            // Update the random questions panel HTML to include topic selection
+            randomPanel.innerHTML = `
+                <div class="mb-4">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Select a Topic:</label>
+                    <select id="question-topic" class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+                        <option value="all">All Topics</option>
+                        ${Object.keys(QUESTIONS_POOL).map(topic => `<option value="${topic}">${topic}</option>`).join('')}
+                    </select>
+                </div>
+                <div id="random-questions-list" class="space-y-2 pb-2 stagger-list" style="max-height: 350px; overflow-y: auto;">
+                    <p class="text-center text-gray-500 p-4">Select a topic to see questions</p>
+                </div>
+                <div class="mt-4 text-center">
+                    <button id="more-questions" class="btn btn-outline">
+                        <i class="fas fa-sync-alt mr-2"></i> Get New Random Questions
+                    </button>
+                </div>
+            `;
+
+            // Use event delegation for dynamically added elements in random panel
+            const randomPanelElement = document.getElementById('random-panel');
+            if (randomPanelElement) {
+                randomPanelElement.addEventListener('click', (event) => {
+                    // Check if the clicked element is the 'more-questions' button
+                    if (event.target.closest('#more-questions')) {
+                        console.log('More questions button clicked (delegated)');
+                        generateRandomQuestionsUI();
+                    }
+                });
+
+                // Also handle topic change via delegation if needed, or ensure select exists
+                const questionTopicSelect = randomPanelElement.querySelector('#question-topic');
+                if (questionTopicSelect) {
+                    questionTopicSelect.addEventListener('change', () => {
+                        console.log('Topic changed, regenerating questions');
+                        generateRandomQuestionsUI();
+                    });
+                } else {
+                    // This might happen if listener setup runs before innerHTML update
+                    console.warn('Could not find #question-topic immediately. Listener might need re-attachment if panel is recreated.');
+                }
+            } else {
+                console.error('Could not find #random-panel element for delegation');
+            }
+
+        }); // End DOMContentLoaded
+    </script>
+</body>
+</html>
