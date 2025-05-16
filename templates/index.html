@@ -148,6 +148,18 @@
              padding: 0; /* Remove padding, handled by app-container */
              margin-bottom: 2rem; /* Add consistent bottom margin */
         }
+        .badge-partner1 { background: rgba(var(--secondary-rgb), 0.1); color: var(--secondary); }
+        .badge-partner2 { background: rgba(var(--primary-rgb), 0.1); color: var(--primary); }
+        .person-card.active-partner1 { background: rgba(var(--secondary-rgb), 0.03); border-color: rgba(var(--secondary-rgb), 0.4); box-shadow: 0 8px 24px rgba(var(--secondary-rgb), 0.1); }
+        .person-card.active-partner2 { background: rgba(var(--primary-rgb), 0.03); border-color: rgba(var(--primary-rgb), 0.4); box-shadow: 0 8px 24px rgba(var(--primary-rgb), 0.1); }
+        .avatar-partner1-bg { background: linear-gradient(135deg, rgba(var(--secondary-rgb), 0.1) 0%, rgba(244, 114, 182, 0.1) 100%); color: var(--secondary); }
+        .avatar-partner2-bg { background: linear-gradient(135deg, rgba(var(--primary-rgb), 0.1) 0%, rgba(79, 70, 229, 0.1) 100%); color: var(--primary); }
+        .answer-box-partner1 { border-left: 5px solid var(--secondary); }
+        .answer-box-partner2 { border-left: 5px solid var(--primary); }
+        .answer-header-partner1 { background: linear-gradient(90deg, rgba(var(--secondary-rgb), 0.08) 0%, rgba(var(--secondary-rgb), 0.01) 100%); }
+        .answer-header-partner2 { background: linear-gradient(90deg, rgba(var(--primary-rgb), 0.08) 0%, rgba(var(--primary-rgb), 0.01) 100%); }
+        .avatar-partner1 { background: linear-gradient(135deg, #f9a8d4 0%, #ec4899 100%); }
+        .avatar-partner2 { background: linear-gradient(135deg, #a5b4fc 0%, #6366f1 100%); }
     </style>
 </head>
 <body class="antialiased">
@@ -169,9 +181,9 @@
             <div class="inline-block mb-3 tag tag-accent"> <i class="fas fa-comment-dots"></i> Growing Closer Together </div>
             <h1 class="text-4xl font-bold mb-3">Our Connection Journal</h1>
             <div class="flex items-center justify-center text-xl space-x-3 mb-2">
-                <span class="text-pink-500 font-semibold">Nidhi</span>
+                <span class="text-pink-500 font-semibold">Partner 1</span>
                 <i class="fas fa-heart heartbeat text-lg" style="color: var(--love);"></i>
-                <span class="text-indigo-600 font-semibold">Arpan</span>
+                <span class="text-indigo-600 font-semibold">Partner 2</span>
             </div>
             <p class="text-gray-500 text-base max-w-md mx-auto">Record audio answers, share your thoughts, and connect.</p>
         </header>
@@ -181,8 +193,14 @@
              <section id="step-home" class="section" data-step="1">
                  <h2 class="text-xl font-semibold mb-4 section-title">Who's Sharing Now?</h2>
                  <div class="grid grid-cols-2 gap-4">
-                     <div id="user-nidhi" class="person-card flex-1 shadow-sm" role="button" tabindex="0" aria-label="Select Nidhi"><div class="person-avatar avatar-nidhi-bg"><i class="fas fa-female"></i></div><span class="font-medium text-pink-500 text-lg">Nidhi</span></div>
-                     <div id="user-arpan" class="person-card flex-1 shadow-sm" role="button" tabindex="0" aria-label="Select Arpan"><div class="person-avatar avatar-arpan-bg"><i class="fas fa-male"></i></div><span class="font-medium text-indigo-600 text-lg">Arpan</span></div>
+                     <div id="user-partner1" class="person-card flex-1 shadow-sm" role="button" tabindex="0" aria-label="Select Partner 1">
+                         <div class="person-avatar avatar-partner1-bg"><i class="fas fa-user"></i></div>
+                         <span class="font-medium text-pink-500 text-lg">Partner 1</span>
+                     </div>
+                     <div id="user-partner2" class="person-card flex-1 shadow-sm" role="button" tabindex="0" aria-label="Select Partner 2">
+                         <div class="person-avatar avatar-partner2-bg"><i class="fas fa-user"></i></div>
+                         <span class="font-medium text-indigo-600 text-lg">Partner 2</span>
+                     </div>
                  </div>
                  <p class="text-center text-sm text-gray-500 mt-6 bg-indigo-50 p-3 rounded-lg border border-indigo-100">
                      <i class="fas fa-info-circle text-indigo-400 mr-1"></i> Select your name to start sharing or view your dashboard.
@@ -278,9 +296,61 @@
 
             <section id="step-review" class="section hidden" data-step="4" aria-hidden="true">
                 <h2 class="text-xl font-semibold mb-4 section-title">Review Answers</h2>
-                <p id="review-question-text" class="text-lg text-gray-700 mb-6 font-medium italic"></p>
-                <div id="nidhi-answer-box" class="answer-box answer-box-nidhi"><div class="answer-header answer-header-nidhi"><div class="flex items-center"><div class="avatar avatar-nidhi">N</div><h3>Nidhi's Answer</h3></div><span id="nidhi-status" class="tag tag-neutral">Not Answered</span></div><div id="nidhi-answer-content" class="relative min-h-[80px]"><div class="answer-content hidden" aria-hidden="true"><audio controls class="audio-player" aria-label="Nidhi's audio answer"></audio><p class="date text-xs text-gray-500 mt-2">Answered on: <span></span></p></div><div id="nidhi-locked" class="locked-overlay"><div><i class="fas fa-lock text-pink-400 lock-animation"></i><p>Answer unlocks when Arpan also answers.</p></div></div><div id="nidhi-pending" class="locked-overlay hidden" aria-hidden="true"><div><i class="far fa-clock text-pink-400"></i><p>Nidhi hasn't answered this yet.</p></div></div></div></div>
-                <div id="arpan-answer-box" class="answer-box answer-box-arpan"><div class="answer-header answer-header-arpan"><div class="flex items-center"><div class="avatar avatar-arpan">A</div><h3>Arpan's Answer</h3></div><span id="arpan-status" class="tag tag-neutral">Not Answered</span></div><div id="arpan-answer-content" class="relative min-h-[80px]"><div class="answer-content hidden" aria-hidden="true"><audio controls class="audio-player" aria-label="Arpan's audio answer"></audio><p class="date text-xs text-gray-500 mt-2">Answered on: <span></span></p></div><div id="arpan-locked" class="locked-overlay"><div><i class="fas fa-lock text-indigo-400 lock-animation"></i><p>Answer unlocks when Nidhi also answers.</p></div></div><div id="arpan-pending" class="locked-overlay hidden" aria-hidden="true"><div><i class="far fa-clock text-indigo-400"></i><p>Arpan hasn't answered this yet.</p></div></div></div></div>
+                <div id="review-question-text" class="text-lg text-gray-700 mb-6 font-medium italic"></div>
+                <div id="partner1-answer-box" class="answer-box answer-box-partner1">
+                    <div class="answer-header answer-header-partner1">
+                        <div class="flex items-center">
+                            <div class="avatar avatar-partner1">P1</div>
+                            <h3>Partner 1's Answer</h3>
+                        </div>
+                        <span id="partner1-status" class="tag tag-neutral">Not Answered</span>
+                    </div>
+                    <div id="partner1-answer-content" class="relative min-h-[80px]">
+                        <div class="answer-content hidden" aria-hidden="true">
+                            <audio controls class="audio-player" aria-label="Partner 1's audio answer"></audio>
+                            <p class="date text-xs text-gray-500 mt-2">Answered on: <span></span></p>
+                        </div>
+                        <div id="partner1-locked" class="locked-overlay">
+                            <div>
+                                <i class="fas fa-lock text-pink-400 lock-animation"></i>
+                                <p>Answer unlocks when Partner 2 also answers.</p>
+                            </div>
+                        </div>
+                        <div id="partner1-pending" class="locked-overlay hidden" aria-hidden="true">
+                            <div>
+                                <i class="far fa-clock text-pink-400"></i>
+                                <p>Partner 1 hasn't answered this yet.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="partner2-answer-box" class="answer-box answer-box-partner2">
+                    <div class="answer-header answer-header-partner2">
+                        <div class="flex items-center">
+                            <div class="avatar avatar-partner2">P2</div>
+                            <h3>Partner 2's Answer</h3>
+                        </div>
+                        <span id="partner2-status" class="tag tag-neutral">Not Answered</span>
+                    </div>
+                    <div id="partner2-answer-content" class="relative min-h-[80px]">
+                        <div class="answer-content hidden" aria-hidden="true">
+                            <audio controls class="audio-player" aria-label="Partner 2's audio answer"></audio>
+                            <p class="date text-xs text-gray-500 mt-2">Answered on: <span></span></p>
+                        </div>
+                        <div id="partner2-locked" class="locked-overlay">
+                            <div>
+                                <i class="fas fa-lock text-indigo-400 lock-animation"></i>
+                                <p>Answer unlocks when Partner 1 also answers.</p>
+                            </div>
+                        </div>
+                        <div id="partner2-pending" class="locked-overlay hidden" aria-hidden="true">
+                            <div>
+                                <i class="far fa-clock text-indigo-400"></i>
+                                <p>Partner 2 hasn't answered this yet.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="text-center mt-8 flex flex-col sm:flex-row justify-center gap-3">
                     <button id="ask-another-question-from-review" class="btn btn-primary"><i class="fas fa-plus mr-2"></i> Ask Another Question</button>
                     <button id="back-to-dashboard-from-review" class="btn btn-outline"><i class="fas fa-tachometer-alt mr-2"></i> Back to Dashboard</button>
@@ -617,8 +687,8 @@
 
             // --- DOM Element References ---
             const mainElement = document.getElementById('app-main');
-            const userNidhiBtn = document.getElementById('user-nidhi');
-            const userArpanBtn = document.getElementById('user-arpan');
+            const userPartner1Btn = document.getElementById('user-partner1');
+            const userPartner2Btn = document.getElementById('user-partner2');
             const dashboardUserName = document.getElementById('dashboard-user-name');
             const manualTab = document.getElementById('manual-tab');
             const randomTab = document.getElementById('random-tab');
@@ -890,37 +960,39 @@
 
             // --- Core App Logic ---
             const setCurrentUser = async (user) => {
-                 if (user !== 'nidhi' && user !== 'arpan') return;
-                 appState.currentUser = user;
-                 // Update UI immediately
-                 userNidhiBtn.classList.toggle('active-nidhi', user === 'nidhi'); userNidhiBtn.setAttribute('aria-pressed', user === 'nidhi');
-                 userArpanBtn.classList.toggle('active-arpan', user === 'arpan'); userArpanBtn.setAttribute('aria-pressed', user === 'arpan');
-                 const userNameCapitalized = user.charAt(0).toUpperCase() + user.slice(1);
-                 if(dashboardUserName) dashboardUserName.textContent = userNameCapitalized + "'s"; // Update dashboard title personalization
+                if (user !== 'partner1' && user !== 'partner2') return;
+                appState.currentUser = user;
+                // Update UI immediately
+                userPartner1Btn.classList.toggle('active-partner1', user === 'partner1'); 
+                userPartner1Btn.setAttribute('aria-pressed', user === 'partner1');
+                userPartner2Btn.classList.toggle('active-partner2', user === 'partner2'); 
+                userPartner2Btn.setAttribute('aria-pressed', user === 'partner2');
+                const userNameCapitalized = user === 'partner1' ? 'Partner 1' : 'Partner 2';
+                if(dashboardUserName) dashboardUserName.textContent = userNameCapitalized + "'s"; // Update dashboard title personalization
 
-                 showToast(`Hi ${userNameCapitalized}! Welcome to your dashboard.`, 'user-check', 'success');
+                showToast(`Hi ${userNameCapitalized}! Welcome to your dashboard.`, 'user-check', 'success');
 
-                 // Fetch updated state for the selected user (points, streak, daily progress)
-                 try {
-                     const stateData = await fetchInitialState(); // This should ideally filter by user on backend or return both
-                     // Assuming fetchInitialState now returns data relevant to the current context (maybe includes both users' progress?)
-                     // For now, let's assume it gives general points/streak and we reset daily flags based on *client* action
-                     appState.gamification.lovePoints = stateData.lovePoints || 0;
-                     appState.gamification.streak = stateData.streak || 0;
-                     appState.gamification.lastStreakUpdateDate = stateData.lastStreakUpdateDate;
-                     // IMPORTANT: Get daily completion status FROM the backend state for this user
-                     appState.gamification.dailyRandomAnswered = stateData.users?.[user]?.dailyRandomAnswered || false; // Adjust based on actual API response structure
-                     appState.gamification.dailyManualAnswered = stateData.users?.[user]?.dailyManualAnswered || false; // Adjust based on actual API response structure
+                // Fetch updated state for the selected user (points, streak, daily progress)
+                try {
+                    const stateData = await fetchInitialState(); // This should ideally filter by user on backend or return both
+                    // Assuming fetchInitialState now returns data relevant to the current context (maybe includes both users' progress?)
+                    // For now, let's assume it gives general points/streak and we reset daily flags based on *client* action
+                    appState.gamification.lovePoints = stateData.lovePoints || 0;
+                    appState.gamification.streak = stateData.streak || 0;
+                    appState.gamification.lastStreakUpdateDate = stateData.lastStreakUpdateDate;
+                    // IMPORTANT: Get daily completion status FROM the backend state for this user
+                    appState.gamification.dailyRandomAnswered = stateData.users?.[user]?.dailyRandomAnswered || false; // Adjust based on actual API response structure
+                    appState.gamification.dailyManualAnswered = stateData.users?.[user]?.dailyManualAnswered || false; // Adjust based on actual API response structure
 +                    console.log(`[State Update - setCurrentUser] Fetched state: Points=${appState.gamification.lovePoints}, Streak=${appState.gamification.streak}, RandomDone=${appState.gamification.dailyRandomAnswered}, ManualDone=${appState.gamification.dailyManualAnswered}`);
-                     updateGamificationUI();
-                 } catch (error) {
-                     console.error("Error fetching state after user selection:", error);
-                     showToast("Error fetching user state.", "exclamation-triangle", "error"); // Added user-visible feedback
-                     // Use defaults or keep previous state? For now, log error and continue.
-                 }
+                    updateGamificationUI();
+                } catch (error) {
+                    console.error("Error fetching state after user selection:", error);
+                    showToast("Error fetching user state.", "exclamation-triangle", "error"); // Added user-visible feedback
+                    // Use defaults or keep previous state? For now, log error and continue.
+                }
 
-                 // Navigate to the dashboard
-                 showSection('dashboard'); // This will trigger loadDashboard()
+                // Navigate to the dashboard
+                showSection('dashboard'); // This will trigger loadDashboard()
             };
             const setActiveTab = (tabId) => { /* ... same logic ... */
                 const isManual = tabId === 'manual-tab'; manualTab.setAttribute('aria-selected', isManual); randomTab.setAttribute('aria-selected', !isManual);
@@ -1157,36 +1229,122 @@
             };
 
             // --- UI Rendering Functions ---
-            const renderReviewScreen = (questionData) => { /* ... same logic ... */
-                 if (!questionData || !questionData.id) return;
-                 reviewQuestionText.textContent = `"${questionData.text}"`;
-                 const nidhiAnswer = questionData.answers?.nidhi; const arpanAnswer = questionData.answers?.arpan;
-                 const nidhiHasAnswered = !!nidhiAnswer?.audioUrl; const arpanHasAnswered = !!arpanAnswer?.audioUrl; const bothAnswered = nidhiHasAnswered && arpanHasAnswered;
-                 nidhiStatus.textContent = nidhiHasAnswered ? 'Answered' : 'Not Answered'; nidhiStatus.className = `tag ${nidhiHasAnswered ? 'badge-nidhi' : 'badge-neutral'}`; // Use badges for consistency
-                 if (nidhiHasAnswered) { nidhiAnswerContent.querySelector('audio').src = nidhiAnswer.audioUrl; nidhiAnswerContent.querySelector('.date span').textContent = formatDate(nidhiAnswer.timestamp); showElement(nidhiAnswerContent); hideElement(nidhiPending); hideElement(nidhiLocked); } else { hideElement(nidhiAnswerContent); hideElement(nidhiLocked); showElement(nidhiPending); }
-                 arpanStatus.textContent = arpanHasAnswered ? 'Answered' : 'Not Answered'; arpanStatus.className = `tag ${arpanHasAnswered ? 'badge-arpan' : 'badge-neutral'}`; // Use badges for consistency
-                 if (arpanHasAnswered) { arpanAnswerContent.querySelector('audio').src = arpanAnswer.audioUrl; arpanAnswerContent.querySelector('.date span').textContent = formatDate(arpanAnswer.timestamp); showElement(arpanAnswerContent); hideElement(arpanPending); hideElement(arpanLocked); } else { hideElement(arpanAnswerContent); hideElement(arpanLocked); showElement(arpanPending); }
-                 if (!bothAnswered) { if (nidhiHasAnswered && !arpanHasAnswered) showElement(arpanLocked); if (arpanHasAnswered && !nidhiHasAnswered) showElement(nidhiLocked); } else { hideElement(nidhiLocked); hideElement(arpanLocked); }
-                 document.querySelectorAll('#history-list .question-item').forEach(item => { item.classList.toggle('selected', item.dataset.questionId === questionData.id); });
+            const renderReviewScreen = (questionData) => {
+                if (!questionData || !questionData.id) return;
+                reviewQuestionText.textContent = `"${questionData.text}"`;
+                const partner1Answer = questionData.answers?.partner1;
+                const partner2Answer = questionData.answers?.partner2;
+                const partner1HasAnswered = !!partner1Answer?.audioUrl;
+                const partner2HasAnswered = !!partner2Answer?.audioUrl;
+                const bothAnswered = partner1HasAnswered && partner2HasAnswered;
+
+                // Partner 1 status
+                partner1Status.textContent = partner1HasAnswered ? 'Answered' : 'Not Answered';
+                partner1Status.className = `tag ${partner1HasAnswered ? 'badge-partner1' : 'badge-neutral'}`;
+                if (partner1HasAnswered) {
+                    partner1AnswerContent.querySelector('audio').src = partner1Answer.audioUrl;
+                    partner1AnswerContent.querySelector('.date span').textContent = formatDate(partner1Answer.timestamp);
+                    showElement(partner1AnswerContent);
+                    hideElement(partner1Pending);
+                    hideElement(partner1Locked);
+                } else {
+                    hideElement(partner1AnswerContent);
+                    hideElement(partner1Locked);
+                    showElement(partner1Pending);
+                }
+
+                // Partner 2 status
+                partner2Status.textContent = partner2HasAnswered ? 'Answered' : 'Not Answered';
+                partner2Status.className = `tag ${partner2HasAnswered ? 'badge-partner2' : 'badge-neutral'}`;
+                if (partner2HasAnswered) {
+                    partner2AnswerContent.querySelector('audio').src = partner2Answer.audioUrl;
+                    partner2AnswerContent.querySelector('.date span').textContent = formatDate(partner2Answer.timestamp);
+                    showElement(partner2AnswerContent);
+                    hideElement(partner2Pending);
+                    hideElement(partner2Locked);
+                } else {
+                    hideElement(partner2AnswerContent);
+                    hideElement(partner2Locked);
+                    showElement(partner2Pending);
+                }
+
+                // Handle locked states
+                if (!bothAnswered) {
+                    if (partner1HasAnswered && !partner2HasAnswered) showElement(partner2Locked);
+                    if (partner2HasAnswered && !partner1HasAnswered) showElement(partner1Locked);
+                } else {
+                    hideElement(partner1Locked);
+                    hideElement(partner2Locked);
+                }
+
+                document.querySelectorAll('#history-list .question-item').forEach(item => {
+                    item.classList.toggle('selected', item.dataset.questionId === questionData.id);
+                });
             };
-            const renderHistoryList = () => { /* ... same logic ... */
-                 historyList.innerHTML = '';
-                 if (!appState.history || appState.history.length === 0) { historyList.innerHTML = '<p class="text-center text-gray-500 p-4">No questions answered yet.</p>'; return; }
-                 // Sort by most recent activity (either answer)
-                 const sortedHistory = [...appState.history].sort((a, b) => {
-                     const lastA = Math.max(a.answers?.nidhi?.timestamp || 0, a.answers?.arpan?.timestamp || 0, a.timestamp || 0); // Consider question timestamp too
-                     const lastB = Math.max(b.answers?.nidhi?.timestamp || 0, b.answers?.arpan?.timestamp || 0, b.timestamp || 0);
-                     return lastB - lastA;
-                 });
-                 sortedHistory.forEach((q) => {
-                    const historyItem = document.createElement('div'); historyItem.className = 'question-item list-item'; historyItem.dataset.questionId = q.id; historyItem.setAttribute('role', 'button'); historyItem.tabIndex = 0;
-                    const nidhiDone = !!q.answers?.nidhi?.audioUrl; const arpanDone = !!q.answers?.arpan?.audioUrl; const bothDone = nidhiDone && arpanDone;
-                    historyItem.innerHTML = `<p class="font-medium text-gray-700 mb-2 text-sm">${q.text}</p><div class="flex flex-wrap gap-2"><span class="badge ${nidhiDone ? 'badge-nidhi' : 'badge-neutral'}"><i class="fas fa-female mr-1"></i> N <i class="fas ${nidhiDone ? 'fa-check' : 'fa-times'} ml-1"></i></span><span class="badge ${arpanDone ? 'badge-arpan' : 'badge-neutral'}"><i class="fas fa-male mr-1"></i> A <i class="fas ${arpanDone ? 'fa-check' : 'fa-times'} ml-1"></i></span><span class="badge ${bothDone ? 'badge-unlocked' : 'badge-locked'}"><i class="fas ${bothDone ? 'fa-unlock' : 'fa-lock'} mr-1"></i> ${bothDone ? 'Unlocked' : 'Locked'}</span></div>`;
-                    const reviewAction = () => { const questionData = appState.history.find(histQ => histQ.id === q.id); if (questionData) { renderReviewScreen(questionData); showSection('step-review'); if (appState.isHistoryVisible) toggleHistoryVisibility(false); showToast(`Reviewing: ${q.text.substring(0, 30)}...`, 'eye', 'info', 2000); } else { showToast('Error loading question details.', 'exclamation-triangle', 'error'); } };
-                    historyItem.addEventListener('click', reviewAction); historyItem.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); reviewAction(); } });
+
+            const renderHistoryList = () => {
+                historyList.innerHTML = '';
+                if (!appState.history || appState.history.length === 0) {
+                    historyList.innerHTML = '<p class="text-center text-gray-500 p-4">No questions answered yet.</p>';
+                    return;
+                }
+
+                const sortedHistory = [...appState.history].sort((a, b) => {
+                    const lastA = Math.max(a.answers?.partner1?.timestamp || 0, a.answers?.partner2?.timestamp || 0, a.timestamp || 0);
+                    const lastB = Math.max(b.answers?.partner1?.timestamp || 0, b.answers?.partner2?.timestamp || 0, b.timestamp || 0);
+                    return lastB - lastA;
+                });
+
+                sortedHistory.forEach((q) => {
+                    const historyItem = document.createElement('div');
+                    historyItem.className = 'question-item list-item';
+                    historyItem.dataset.questionId = q.id;
+                    historyItem.setAttribute('role', 'button');
+                    historyItem.tabIndex = 0;
+
+                    const partner1Done = !!q.answers?.partner1?.audioUrl;
+                    const partner2Done = !!q.answers?.partner2?.audioUrl;
+                    const bothDone = partner1Done && partner2Done;
+
+                    historyItem.innerHTML = `
+                        <p class="font-medium text-gray-700 mb-2 text-sm">${q.text}</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="badge ${partner1Done ? 'badge-partner1' : 'badge-neutral'}">
+                                <i class="fas fa-user mr-1"></i> P1 <i class="fas ${partner1Done ? 'fa-check' : 'fa-times'} ml-1"></i>
+                            </span>
+                            <span class="badge ${partner2Done ? 'badge-partner2' : 'badge-neutral'}">
+                                <i class="fas fa-user mr-1"></i> P2 <i class="fas ${partner2Done ? 'fa-check' : 'fa-times'} ml-1"></i>
+                            </span>
+                            <span class="badge ${bothDone ? 'badge-unlocked' : 'badge-locked'}">
+                                <i class="fas ${bothDone ? 'fa-unlock' : 'fa-lock'} mr-1"></i> ${bothDone ? 'Unlocked' : 'Locked'}
+                            </span>
+                        </div>
+                    `;
+
+                    const reviewAction = () => {
+                        const questionData = appState.history.find(histQ => histQ.id === q.id);
+                        if (questionData) {
+                            renderReviewScreen(questionData);
+                            showSection('step-review');
+                            if (appState.isHistoryVisible) toggleHistoryVisibility(false);
+                            showToast(`Reviewing: ${q.text.substring(0, 30)}...`, 'eye', 'info', 2000);
+                        } else {
+                            showToast('Error loading question details.', 'exclamation-triangle', 'error');
+                        }
+                    };
+
+                    historyItem.addEventListener('click', reviewAction);
+                    historyItem.addEventListener('keydown', (e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            reviewAction();
+                        }
+                    });
+
                     historyList.appendChild(historyItem);
-                 });
+                });
             };
+
             // Make toggleHistoryVisibility globally accessible for onclick
             window.toggleHistoryVisibility = (forceShow = null) => {
                  const shouldBeVisible = forceShow !== null ? forceShow : !appState.isHistoryVisible;
@@ -1315,10 +1473,10 @@
 
 
             // --- Event Listeners ---
-            userNidhiBtn.addEventListener('click', () => setCurrentUser('nidhi'));
-            userArpanBtn.addEventListener('click', () => setCurrentUser('arpan'));
-            userNidhiBtn.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') setCurrentUser('nidhi'); });
-            userArpanBtn.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') setCurrentUser('arpan'); });
+            userPartner1Btn.addEventListener('click', () => setCurrentUser('partner1'));
+            userPartner2Btn.addEventListener('click', () => setCurrentUser('partner2'));
+            userPartner1Btn.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') setCurrentUser('partner1'); });
+            userPartner2Btn.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') setCurrentUser('partner2'); });
 
             // Back Buttons
             backToDashboardBtn.addEventListener('click', () => showSection('dashboard')); // From Q Select to Dashboard

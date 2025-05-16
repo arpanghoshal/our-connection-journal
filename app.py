@@ -208,7 +208,7 @@ def post_answer():
     cursor = db.cursor() # Use cursor for transaction control
 
     # --- Input Validation ---
-    if 'userId' not in request.form or request.form['userId'] not in ['nidhi', 'arpan']:
+    if 'userId' not in request.form or request.form['userId'] not in ['partner1', 'partner2']:
         print("Validation failed: Missing or invalid userId. Form:", request.form) # Add detail
         return jsonify({"error": "Missing or invalid userId"}), 400
     if 'questionText' not in request.form or not request.form['questionText']:
@@ -256,7 +256,7 @@ def post_answer():
 
         # --- REVISED Point and Streak Logic ---
         points_to_add = 0
-        other_user = 'arpan' if user_id == 'nidhi' else 'nidhi'
+        other_user = 'partner2' if user_id == 'partner1' else 'partner1'
 
         # Check if the other user already answered THIS question (before this current answer)
         cursor.execute(
@@ -274,7 +274,7 @@ def post_answer():
             points_to_add = 5
             print(f"Point logic: Second answer for question {question_id}. Awarding +5 points.")
 
-        point_awarded_this_time = points_to_add # Store the amount awarded (1, 5, or 0 if error)
+        point_awarded_this_time = points_to_add
 
         # Fetch current state
         cursor.execute("""
@@ -405,13 +405,14 @@ def serve_audio(filename):
         return jsonify({"error": "Error serving audio file"}), 500
 
 
-@app.route('/api/pending/<user_id>', methods=['GET'])
-def get_pending_questions(user_id):
+@app.route('/api/pending', methods=['GET'])
+def get_pending_questions():
     """Gets questions answered by the other user but not yet by this user."""
-    if user_id not in ['nidhi', 'arpan']:
-        return jsonify({"error": "Invalid user ID"}), 400
+    user_id = request.args.get('userId')
+    if not user_id or user_id not in ['partner1', 'partner2']:
+        return jsonify({'error': 'Invalid user ID'}), 400
 
-    other_user = 'arpan' if user_id == 'nidhi' else 'nidhi'
+    other_user = 'partner2' if user_id == 'partner1' else 'partner1'
     db = get_db()
 
     try:
